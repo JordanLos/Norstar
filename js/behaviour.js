@@ -43,11 +43,7 @@ $( document ).ready(function() {
 			else if (index == 2 && direction == 'up'){
 				tl.reverse()
 			}
-		}/*
-		'afterLoad': function(anchorLink, index) {
-			if (index == 2 || index == 1)  
 		}
-		*/
 	});
 
 });
