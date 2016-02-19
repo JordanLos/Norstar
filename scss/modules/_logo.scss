@@ -1,0 +1,15 @@
+body {
+	background-color: red;
+}
+#logo {
+	@include span-columns(8);
+	@include shift(2);
+	@include pad(2em);
+	@include vertical-align;
+	position: fixed;
+
+	background-color: white;
+	border-radius: 15px;
+
+}
+
