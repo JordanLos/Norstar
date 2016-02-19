@@ -20,7 +20,8 @@ $( document ).ready(function() {
 			if (index == 1 && direction == 'down') {
 				tl.to('#skewX', 0.25, {transform: 'skewX(0)'})
 				.to('#skewX', 0.25, {left: '100%'}, "open")
-				.to('#logo', 0.8, { top:'7%', marginLeft:'0', padding:'15px 25%', borderRadius:'0'  }, "open")
+				.to('#logo', 0.5, { transform:'translateY(50%)', top:'0%', }, "open")
+				.to('#logo', 0.5, { marginLeft:'0%', paddingLeft:'16.6666667%', paddingRight:'16.6666667%', width:'100%'})
 			} else if (index == 2 && direction == 'down') {
 			} else if (index == 3 && direction == 'down'){
 			}
