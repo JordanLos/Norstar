@@ -22,6 +22,7 @@ $( document ).ready(function() {
 				.to('#skewX', 0.25, {left: '100%'}, "open")
 				.to('#logo', 0.5, { transform:'translateY(50%)', top:'0%', }, "open")
 				.to('#logo', 0.5, { marginLeft:'0%', paddingLeft:'16.6666667%', paddingRight:'16.6666667%', width:'100%'})
+				.to('.action-button_floating', 0.5, { bottom:'5em' })
 			} else if (index == 2 && direction == 'down') {
 			} else if (index == 3 && direction == 'down'){
 			}
