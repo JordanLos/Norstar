@@ -2,7 +2,6 @@
 // The overlay component will contain any modules that stay fixed as the pages
 // change
 .overlay {
-	postion: fixed;
 	height: 100vh;
-	@include outer-container;
+	width: 100em;
 }

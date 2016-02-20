@@ -1,6 +1,17 @@
 /*****TYPOGRAPHY*****/
-body,h1,h2,h3,h4,h5,h6 {
+body,h1,h2,h3,h4,h5,h6,p {
 	font-family: "minerva-modern",sans-serif;
 	font-style: normal;
 	font-weight: 400;
+}
+h1 {
+	font-size: 7rem;
+	line-height: 0.5;
+	margin-bottom: 0;
+}
+h2 {
+	font-size: 4rem;
+}
+p {
+	font-size: 4rem;
 }
