@@ -1,13 +1,13 @@
+// Libraries
+@import 'bourbon/bourbon';
+@import 'bourbon/neat/neat';
+
 // Global: Core styles used in potentially all documents
 @import 'global/elements';
 @import 'global/mixins';
 @import 'global/typography';
 @import 'global/util';
 @import 'global/vars';
-
-// Libraries
-@import 'bourbon/bourbon';
-@import 'bourbon/neat/neat';
 
 // Components: Largest Elements of a page structure (i.e. header, nav, footer,)
 @import 'components/overlay';
