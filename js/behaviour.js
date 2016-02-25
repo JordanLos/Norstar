@@ -1,6 +1,10 @@
 $( document ).ready(function() {	
 
 	var tl = new TimelineLite();
+	var lineHeight = $('h1').outerHeight( true );
+	var lineHeightPx = lineHeight + 'px';
+	console.log(lineHeight);
+
 
 	$('#fullpage').fullpage({
 		scrollingSpeed: 1000,
@@ -14,55 +18,37 @@ $( document ).ready(function() {
 				.to('#skewX', 0.25, {
 					left: '100%' }, 
 					"open" )
-				.to('#logo', 0.5, { 
-					transform:'translateY(50%)', 
-					top:'0%' },
-					"open" )
-				.to('#logo', 0.5, { 
-					marginLeft:'0%', 
-					paddingLeft:'16.6666667%', 
-					paddingRight:'16.6666667%', 
-					borderRadius:'0px', 
-					width:'100%' })
-				.to('.carousel', 0.5, { 
-					top:'10%' })
-				.to('.carousel', 0.5, { 
-				})
+
+				.to('.header', 0.5, {
+					transform:"translateY(-50%)",
+					top:'0' })
+					
 				.to('#slogan', 0.5, { 
-					autoAlpha:0, 
-					display:'none' })
-				.to('.carousel-header_fixed', 0.5, { 
-					autoAlpha:1, 
-					marginTop:'0' }, 
-					"alpha")
-				.to('.carousel-header_moving', 0.5, { 
-					autoAlpha:1 }, 
-					"alpha" )
+					display:'none',
+					autoAlpha:0 },
+					"scene1")
+				.to(['#carousel1', '.carousel-header'], 0.5, {
+					display:'block',
+					autoAlpha:1 },
+					"scene1" )
+				.to('.header', 0.5, {
+					marginLeft:'0',
+					width:'100%',
+					borderRadius:'0em' },
+					"scene1" )
+
 				.to('.action-button_floating', 0.5, { 
 					bottom:'5em' })
-			} else if (index == 2 && direction == 'down') {
-				tl.to('#carousel-h1', 0.2, { 
-					autoAlpha:0 })
-				.to('.carousel-header_moving', 0.3, { 
-					top:'-=131px' })
-				.to('#carousel-h2', 0.2, { 
+			} else if (index > 1 && direction == 'down') {
+				var headerActive = '#carousel' + (index - 1).toString();
+				var headerNext = '#carousel' + index.toString();
+			
+				tl.to(headerActive, 0.3, {
+					autoAlpha:0,
+					display:'none' })
+				.to(headerNext, 0.3, {
+					display:'block',
 					autoAlpha:1 })
-			} else if (index == 3 && direction == 'down'){
-				tl.to('#carousel-h2', 0.2, { 
-					autoAlpha:0 })
-				.to('.carousel-header_moving', 0.3, { 
-					top:'-=131px' })
-				.to('#carousel-h3', 0.2, { 
-					autoAlpha:1 })
-			} else if (index == 4 && direction == 'down') {
-				tl.to('#carousel-h3', 0.2, { autoAlpha:0 })
-				.to('.carousel-header_moving', 0.3, { 
-					top:'-=131px' })
-				.to('#carousel-h4', 0.2, {
-					autoAlpha:1 })
-			}
-			else if (index == 2 && direction == 'up'){
-				tl.reverse()
 			}
 		}
 	});
