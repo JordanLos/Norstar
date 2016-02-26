@@ -1,0 +1,21 @@
+.action-button_floating {
+
+	position: fixed;
+	bottom: 5em;
+	@include shift(9);
+	height: 9rem;
+	width: 9rem;
+	padding: 2rem;
+	background:
+		url(../img/phone.svg)
+		center / 62%
+		no-repeat
+		red;
+	border-radius: 50%;
+	box-shadow:
+		0 0 0.25rem rgba(0,0,0,0.5),
+		0.5rem 0.5rem 0.5rem 0.1rem rgba(0,0,0,0.7);
+	
+	// Initial position for Javascript
+	bottom: -10em;
+}

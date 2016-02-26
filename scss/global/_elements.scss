@@ -1,0 +1,14 @@
+// Use Border Box Sizing
+html {
+	box-sizing: border-box;
+}
+
+*, *:after, *:before {
+	box-sizing: inhereit;
+}
+
+body {
+	background:
+		url(../img/dirt.jpeg);
+	color: white;
+}

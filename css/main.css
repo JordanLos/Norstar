@@ -1,177 +1,82 @@
-/****VARIABLES*****/
-/*****RESETS*******/
-/*****TYPOGRAPHY*****/
-body, h1, h2, h3, h4, h5, h6 {
-  font-family: "minerva-modern",sans-serif;
-  font-style: normal;
-  font-weight: 400; }
+html {
+  box-sizing: border-box; }
 
-/****COLORS******/
-/*** BRIGHT PALETTE
-$light: #D9C9B8;
-$dark: #5B4C3E;
-$medium: #8B796C;
-*/
-/* MUTED PALETTE */
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:after, *:before {
+  box-sizing: inhereit; }
+
 body {
-  background-color: #716454; }
-
-#logo {
-  background-color: white; }
-
-#skewX {
-  background-color: rgba(23, 129, 102, 0.8); }
-
-/*****GRID*******/
-/****LANDING****/
-body {
-  background: linear-gradient(rgba(46, 35, 59, 0.2), rgba(46, 35, 59, 0.2)), url(../img/dirt.jpeg); }
-
-.icon {
-  max-width: 3em;
-  height: 3em; }
-
-#logo {
-  display: block;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  position: fixed;
-  max-width: 50%;
-  margin: 0 25%;
-  padding: 2em;
-  border-radius: 1em;
-  z-index: 2; }
-
-#skewX {
-  height: 100%;
-  position: fixed;
-  z-index: -10;
-  left: 50%;
-  transform: skewX(-20deg);
-  width: 90%; }
-
-#nav-bar {
-  position: fixed;
-  width: 100%;
-  height: 8%;
-  top: 14%;
-  background-color: #178166;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  top: 6%;
-  z-index: 1;
-  visibility: hidden; }
-
-/**** CONTENT *****/
-body {
+  background: url(../img/dirt.jpeg);
   color: white; }
 
-.text-block {
-  position: fixed;
-  height: 70%;
-  width: 100%;
-  background-color: #2E233B;
-  visibility: hidden; }
-  .text-block > h1 {
-    text-align: center; }
-  .text-block > h1, .text-block p {
-    padding: 5%; }
-
-#dev, #about {
-  left: 100vw; }
-
-.moving1, .moving2 {
-  padding: 5px;
-  border-radius: 5px; }
-
-/****** CONTACT INFO *******/
-.phone-icon {
-  display: inline-block;
-  max-width: 5em;
-  margin-right: 2em; }
-
-.img-combo {
-  width: 100%; }
-
-.combo-text {
-  width: 50%;
-  display: inline-block; }
-
-#contact-info {
-  visibility: hidden;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  background-color: white;
-  color: #2E233B;
-  z-index: 101;
-  width: 100%;
-  margin-top: 39%;
-  height: 70%;
-  padding-left: 10%; }
+/*****TYPOGRAPHY*****/
+html {
+  font-size: 10px; }
 
 body {
+  font-family: "minerva-modern", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 18px;
-  line-height: 27px;
-  max-width: 760px;
-  padding: 27px;
+  font-size: 2.666rem;
+  line-height: 1.25;
+  padding: 1.25rem;
   margin: 0 auto; }
 
 h1 {
   font-family: inherit;
   font-weight: 600;
   font-style: inherit;
-  font-size: 76px;
-  line-height: 81px;
-  margin-top: 27px;
-  margin-bottom: 0px; }
+  font-size: 4.73719rem;
+  line-height: 1.25;
+  margin-top: 1.25;
+  margin-bottom: 0em; }
 
 h2 {
   font-family: inherit;
   font-weight: 600;
   font-style: inherit;
-  font-size: 47px;
-  line-height: 54px;
-  margin-top: 27px;
-  margin-bottom: 27px; }
+  font-size: 3.55378rem;
+  line-height: 2.5;
+  margin-top: 1.25;
+  margin-bottom: 0em; }
 
 h3 {
   font-family: inherit;
   font-weight: 600;
   font-style: inherit;
-  font-size: 29px;
-  line-height: 54px;
-  margin-top: 27px;
-  margin-bottom: 0px; }
+  font-size: 3.55378rem;
+  line-height: 2.5;
+  margin-top: 1.25;
+  margin-bottom: 0em; }
 
+/* Not in use for this project, values are placeholders only
 h4 {
-  font-family: inherit;
-  font-weight: 600;
-  font-style: inherit;
-  font-size: 18px;
-  line-height: 27px;
-  margin-top: 27px;
-  margin-bottom: 0px; }
-
+	font-family: inherit;
+	font-weight: 600;
+	font-style: inherit;
+	font-size: 1rem;
+	line-height: 1.25rem;
+	margin-top: 1.25rem;
+	margin-bottom: 0rem;
+}
 h5 {
-  font-family: inherit;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 18px;
-  line-height: 27px;
-  margin-top: 27px;
-  margin-bottom: 0px; }
-
+	font-family: inherit;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 1rem;
+	line-height: 1.25rem;
+	margin-top: 1.25rem;
+	margin-bottom: 0rem;
+}
+*/
 p, ul, ol, pre, table, blockquote {
-  margin-top: 0px;
-  margin-bottom: 27px; }
+  margin-top: 1.25;
+  margin-bottom: 0rem; }
 
 ul ul, ol ol, ul ol, ol ul {
   margin-top: 0;
@@ -193,16 +98,88 @@ sup {
 sub {
   bottom: -0.25em; }
 
-a {
-  color: #268ED9; }
+/****COLORS******/
+/*** BRIGHT PALETTE
+$light: #D9C9B8;
+$dark: #5B4C3E;
+$medium: #8B796C;
+*/
+/* MUTED PALETTE */
+.overlay {
+  height: 100vh;
+  width: 100%; }
 
-.gridlover-grid {
-  background-image: linear-gradient(to bottom, rgba(0, 170, 255, 0.3) 1px, transparent 1px);
-  background-position: left -1px;
-  background-repeat: repeat;
-  background-size: 27px 27px; }
+.header {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  margin-left: 17.05961%;
+  padding: 1em;
+  background-color: white;
+  border-radius: 1em;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  position: fixed;
+  overflow: hidden;
+  z-index: 999; }
+  .header:last-child {
+    margin-right: 0; }
 
-.gridlover-grid body {
-  box-shadow: 1px 0px 0px rgba(0, 170, 255, 0.3), -1px 0px 0px rgba(0, 170, 255, 0.3); }
+#logo {
+  display: inline-block;
+  z-index: 100;
+  max-height: 5em; }
+
+.content {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-left: 8.5298%;
+  margin-top: 22em; }
+  .content:last-child {
+    margin-right: 0; }
+
+.action-button_floating {
+  position: fixed;
+  bottom: 5em;
+  margin-left: 76.76824%;
+  height: 9rem;
+  width: 9rem;
+  padding: 2rem;
+  background: url(../img/phone.svg) center/62% no-repeat red;
+  border-radius: 50%;
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5), 0.5rem 0.5rem 0.5rem 0.1rem rgba(0, 0, 0, 0.7);
+  bottom: -10em; }
+
+#skewX {
+  background-color: rgba(23, 129, 102, 0.8); }
+
+/****LANDING****/
+#skewX {
+  height: 100%;
+  position: fixed;
+  z-index: -10;
+  left: 50%;
+  transform: skewX(-20deg);
+  width: 90%; }
+
+.carousel {
+  text-align: center;
+  overflow: hidden;
+  z-index: 2;
+  color: #178166; }
+  .carousel h1 {
+    margin-top: 1rem; }
+
+.carousel-header,
+#carousel1,
+#carousel2,
+#carousel3,
+#carousel4 {
+  visibility: hidden;
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */

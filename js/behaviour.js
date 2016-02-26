@@ -2,52 +2,79 @@ $( document ).ready(function() {
 
 	var tl = new TimelineLite();
 
-	$('body').click(function(){
-		TweenMax.to('#contact-info', 1, {autoAlpha:1});
-	})
-	$('#nav-bar').click(function(){
-		TweenMax.to('#contact-info', 1, {autoAlpha:0});
-	})
-
-
 	$('#fullpage').fullpage({
-		
 		scrollingSpeed: 1000,
 		easingcss3: 'cubic-bezier(0.230, 1.000, 0.320, 1.000)',
 		
 		'onLeave': function(index, nextIndex, direction) {
+			// Three Scrolling Behaviours
+			// 1. Main Animation to transfer from landing page
+			//	to content
+			// 2. Scroll header text when scrolling down
+			// 3. Scroll header text when scrolling up
 
 			if (index == 1 && direction == 'down') {
-				tl.to('#skewX', 0.25, {transform: 'skewX(0)'})
-				.to('#skewX', 0.25, {left: '100%'}, "open")
-				.to('#logo', 0.8, { top:'7%', marginLeft:'0', padding:'15px 25%', borderRadius:'0'  }, "open")
-				.to('#nav-bar', 0.0, { visibility:'visible' })
-				.to('#nav-bar', 0.8, { top:'14%' })
-				.to('#env', 0.0, { visibility:'visible' })
-				.to('.text-block', 0.5, { top:'22%' })
-				.to('.moving1', 0.2, {backgroundColor: 'hsla(0,0%,0%,0.2'});
-				tl.play();
-			} else if (index == 2 && direction == 'down') {
-				TweenMax.to('#dev', 0.0, { visibility:'visible' })
-				TweenMax.to('#env', 0.3, { left:'-100vw' });
-				TweenMax.to('#dev', 0.3, { left:'0' });
-				TweenMax.to('.moving2', 0.2, {backgroundColor: 'hsla(0,0%,0%,0.2'});
-				TweenMax.to('.moving1', 0.2, {backgroundColor: 'hsla(0,0%,0%,0'});
-			} else if (index == 3 && direction == 'down'){
-				TweenMax.to('#about', 0.0, { visibility:'visible' })
-				TweenMax.to('#dev', 0.3, { left:'-100vw' });
-				TweenMax.to('#about', 0.3, { left:'0' });
-				//TweenMax.to('.moving1', 0.2, {backgroundColor: 'hsla(0,0%,0%,0.2'});
-				//TweenMax.to('.moving2', 0.2, {backgroundColor: 'hsla(0,0%,0%,0'});
+			// 1. Animate landing state to content
+				// A. Unskew and move the colored div
+				tl.to('#skewX', 0.25, {
+					transform: 'skewX(0)'})
+				.to('#skewX', 0.25, {
+					left: '100%' }, 
+					"open" )
+
+				// B. Move the header from center page to the top
+				// of the page and remove the company slogan
+				.to('.header', 0.5, {
+					transform:"translateY(-50%)",
+					top:'0' },
+					"scene1" )
+				.to('#slogan', 0.5, { 
+					display:'none',
+					autoAlpha:0 },
+					"scene1")
+				
+				// C. Expand the header to take up the entire width
+				// of the screen and add the carousel text
+				.to(['#carousel1', '.carousel-header'], 0.5, {
+					autoAlpha:1,
+					display:'block' }, 
+					"scene2", "-=0.3" )
+				.to('.header', 0.5, {
+					marginLeft:'0',
+					width:'100%',
+					borderRadius:'0em' },
+					"scene2" )
+
+				// D. Bring the Contact Action buttion into view
+				.to('.action-button_floating', 0.5, { 
+					bottom:'5em' })
+
+			} else if (index > 1 && direction == 'down') {
+				// Identify the current header text to fade out
+				var headerActive = '#carousel' + (index - 1).toString();
+				// Identify the next header text to fade in 
+				var headerNext = '#carousel' + index.toString();
+			
+				// Fade out the carousel text, then remove it from the document flow
+				tl.to(headerActive, 0.3, {
+					autoAlpha:0,
+					display:'none' })
+				// Add the next carousel text to the document flow, the fade in
+				.to(headerNext, 0.3, {
+					display:'block',
+					autoAlpha:1 })
+			} else if (index > 2 && direction == 'up') {
+				var headerActive = '#carousel' + (index - 1).toString();
+				var headerNext = '#carousel' + (index - 2).toString();
+
+				tl.to(headerActive, 0.3, {
+					autoAlpha:0,
+					display:'none' })
+				.to(headerNext, 0.3, {
+					display:'block',
+					autoAlpha:1 })
 			}
-			else if (index == 2 && direction == 'up'){
-				tl.reverse()
-			}
-		}/*
-		'afterLoad': function(anchorLink, index) {
-			if (index == 2 || index == 1)  
 		}
-		*/
 	});
 
 });

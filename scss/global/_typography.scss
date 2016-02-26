@@ -1,0 +1,102 @@
+/*****TYPOGRAPHY*****/
+
+// html font size at 10 to keep rems to 10
+html {
+	font-size: 10px;
+}
+
+@mixin font-size($sizeValue: 1.6) {
+	font-size: ($sizeValue * 10) + px;
+	font-size: $sizeValue + rem;
+}
+
+$base-line-height: 1.25;
+$modular-scale-ratio: $perfect-fourth;
+$modular-scale-base: 2rem;
+$line-height: 1rem * 1.25;
+
+// Use Margin top only - it allows every item to set itself exactly where it needs to be
+
+
+body {
+	font-family: "minerva-modern", sans-serif; 
+	font-weight: 400;
+	font-style: normal;
+	font-size: modular-scale(1);
+	line-height: ($base-line-height * 1);
+	padding: 1.25rem;
+	margin: 0 auto;
+}
+h1 {
+	font-family: inherit;
+	font-weight: 600;
+	font-style: inherit;
+	font-size: modular-scale(3);
+	line-height: $base-line-height;
+	margin-top: ($base-line-height * 1);
+	margin-bottom: 0em;
+}
+h2 {
+	font-family: inherit;
+	font-weight: 600;
+	font-style: inherit;
+	font-size: modular-scale(2);
+	line-height: $base-line-height * 2;
+	margin-top: ($base-line-height * 1);
+	margin-bottom: 0em;
+}
+h3 {
+	font-family: inherit;
+	font-weight: 600;
+	font-style: inherit;
+	font-size: modular-scale(2);
+	line-height: $base-line-height * 2;
+	margin-top: ($base-line-height * 1);
+	margin-bottom: 0em;
+}
+/* Not in use for this project, values are placeholders only
+h4 {
+	font-family: inherit;
+	font-weight: 600;
+	font-style: inherit;
+	font-size: 1rem;
+	line-height: 1.25rem;
+	margin-top: 1.25rem;
+	margin-bottom: 0rem;
+}
+h5 {
+	font-family: inherit;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 1rem;
+	line-height: 1.25rem;
+	margin-top: 1.25rem;
+	margin-bottom: 0rem;
+}
+*/
+p, ul, ol, pre, table, blockquote {
+	margin-top: ($base-line-height * 1);
+	margin-bottom: 0rem;
+}
+ul ul, ol ol, ul ol, ol ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+hr {
+	border: 1px solid;
+	margin: -1px 0;
+}
+b, strong, em, small, code {
+	line-height: 1;
+}
+sup {
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+
+
