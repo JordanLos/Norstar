@@ -1,15 +1,1 @@
-#logo {
-	@include span-columns(8);
-	@include shift(2);
-	@include pad(0.5em);
-	@include vertical-align;
-	display: inline-block;
-	position: fixed;
-	max-height: 10%;
-	z-index: 100;
-	background-color: white;
-	border-radius: 10px;
-	// TODO: make hieght multiople of line-height
-
-}
 

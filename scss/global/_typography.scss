@@ -13,8 +13,10 @@ html {
 $base-line-height: 1.25;
 $modular-scale-ratio: $perfect-fourth;
 $modular-scale-base: 2rem;
+$line-height: 1rem * 1.25;
 
 // Use Margin top only - it allows every item to set itself exactly where it needs to be
+
 
 body {
 	font-family: "minerva-modern", sans-serif; 
@@ -31,7 +33,7 @@ h1 {
 	font-style: inherit;
 	font-size: modular-scale(3);
 	line-height: $base-line-height;
-	margin-top: ($base-line-height * 1) + em;
+	margin-top: ($base-line-height * 1);
 	margin-bottom: 0em;
 }
 h2 {
@@ -40,7 +42,7 @@ h2 {
 	font-style: inherit;
 	font-size: modular-scale(2);
 	line-height: $base-line-height * 2;
-	margin-top: ($base-line-height * 1) + em;
+	margin-top: ($base-line-height * 1);
 	margin-bottom: 0em;
 }
 h3 {
@@ -49,7 +51,7 @@ h3 {
 	font-style: inherit;
 	font-size: modular-scale(2);
 	line-height: $base-line-height * 2;
-	margin-top: ($base-line-height * 1) + em;
+	margin-top: ($base-line-height * 1);
 	margin-bottom: 0em;
 }
 /* Not in use for this project, values are placeholders only
@@ -73,7 +75,7 @@ h5 {
 }
 */
 p, ul, ol, pre, table, blockquote {
-	margin-top: ($base-line-height * 1) + em;
+	margin-top: ($base-line-height * 1);
 	margin-bottom: 0rem;
 }
 ul ul, ol ol, ul ol, ol ul {

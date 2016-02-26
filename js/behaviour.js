@@ -21,21 +21,22 @@ $( document ).ready(function() {
 
 				.to('.header', 0.5, {
 					transform:"translateY(-50%)",
-					top:'0' })
-					
+					top:'0' },
+					"scene1" )
 				.to('#slogan', 0.5, { 
 					display:'none',
 					autoAlpha:0 },
 					"scene1")
+				
 				.to(['#carousel1', '.carousel-header'], 0.5, {
-					display:'block',
-					autoAlpha:1 },
-					"scene1" )
+					autoAlpha:1,
+					display:'block' }, 
+					"scene2", "-=0.3" )
 				.to('.header', 0.5, {
 					marginLeft:'0',
 					width:'100%',
 					borderRadius:'0em' },
-					"scene1" )
+					"scene2" )
 
 				.to('.action-button_floating', 0.5, { 
 					bottom:'5em' })

@@ -1,0 +1,18 @@
+.header {
+	@include span-columns(8);
+	@include shift(2);
+	@include pad(1em);
+	background-color: white;
+	border-radius: 1em;
+	@include vertical-align;
+	position: fixed;
+	overflow: hidden;
+}
+
+#logo {
+	display: inline-block;
+	z-index: 100;
+	max-height: 5em;
+	// TODO: make hieght multiople of line-height
+
+}

@@ -33,7 +33,7 @@ h1 {
   font-style: inherit;
   font-size: 4.73719rem;
   line-height: 1.25;
-  margin-top: 1.25em;
+  margin-top: 1.25;
   margin-bottom: 0em; }
 
 h2 {
@@ -42,7 +42,7 @@ h2 {
   font-style: inherit;
   font-size: 3.55378rem;
   line-height: 2.5;
-  margin-top: 1.25em;
+  margin-top: 1.25;
   margin-bottom: 0em; }
 
 h3 {
@@ -51,7 +51,7 @@ h3 {
   font-style: inherit;
   font-size: 3.55378rem;
   line-height: 2.5;
-  margin-top: 1.25em;
+  margin-top: 1.25;
   margin-bottom: 0em; }
 
 /* Not in use for this project, values are placeholders only
@@ -75,7 +75,7 @@ h5 {
 }
 */
 p, ul, ol, pre, table, blockquote {
-  margin-top: 1.25em;
+  margin-top: 1.25;
   margin-bottom: 0rem; }
 
 ul ul, ol ol, ul ol, ol ul {
@@ -109,6 +109,28 @@ $medium: #8B796C;
   height: 100vh;
   width: 100%; }
 
+.header {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  margin-left: 17.05961%;
+  padding: 1em;
+  background-color: white;
+  border-radius: 1em;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  position: fixed;
+  overflow: hidden; }
+  .header:last-child {
+    margin-right: 0; }
+
+#logo {
+  display: inline-block;
+  z-index: 100;
+  max-height: 5em; }
+
 .content {
   float: left;
   display: block;
@@ -117,25 +139,6 @@ $medium: #8B796C;
   margin-left: 8.5298%;
   margin-top: 22em; }
   .content:last-child {
-    margin-right: 0; }
-
-#logo {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 65.88078%;
-  margin-left: 17.05961%;
-  padding: 0.5em;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  display: inline-block;
-  position: fixed;
-  max-height: 10%;
-  z-index: 100;
-  background-color: white;
-  border-radius: 10px; }
-  #logo:last-child {
     margin-right: 0; }
 
 .action-button_floating {
@@ -164,35 +167,18 @@ $medium: #8B796C;
 
 .carousel {
   text-align: center;
-  position: fixed;
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 82.94039%;
-  margin-left: 8.5298%;
   overflow: hidden;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-top: 5em;
   z-index: 2;
-  background-color: rgba(255, 255, 255, 0.3); }
-  .carousel:last-child {
-    margin-right: 0; }
-  .carousel > h2 {
-    margin-top: 0;
-    font-style: italic; }
+  color: #178166; }
+  .carousel h1 {
+    margin-top: 1rem; }
 
-.carousel-header_fixed {
-  position: relative;
-  z-index: 2; }
-
-.carousel-header_moving {
-  position: relative;
-  zindex: 1; }
-
-.carousel-header_fixed,
-.carousel-header_moving {
+.carousel-header,
+#carousel1,
+#carousel2,
+#carousel3,
+#carousel4 {
+  visibility: hidden;
   display: none; }
 
 /*# sourceMappingURL=main.css.map */
