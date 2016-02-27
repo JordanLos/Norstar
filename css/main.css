@@ -121,7 +121,6 @@ $medium: #8B796C;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  position: fixed;
   overflow: hidden;
   z-index: 999; }
   .header:last-child {
@@ -137,9 +136,58 @@ $medium: #8B796C;
   display: block;
   margin-right: 2.35765%;
   width: 82.94039%;
-  margin-left: 8.5298%;
-  margin-top: 22em; }
+  margin-left: 8.5298%; }
   .content:last-child {
+    margin-right: 0; }
+
+.contact {
+  position: absolute;
+  background-color: rgba(25, 100, 25, 0.8);
+  width: 100%;
+  z-index: 998;
+  bottom: 0;
+  height: 100%;
+  padding-top: 15em;
+  padding-bottom: 5em;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-pack: distribute;
+  -moz-box-pack: distribute;
+  box-pack: distribute;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  -o-justify-content: space-around;
+  justify-content: space-around;
+  -ms-flex-pack: distribute;
+  visibility: hidden; }
+
+.media {
+  margin-left: 8.5298%; }
+
+.media-img {
+  display: inline-block;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+  margin-right: 2em; }
+  .media-img:last-child {
     margin-right: 0; }
 
 .action-button_floating {
@@ -152,7 +200,8 @@ $medium: #8B796C;
   background: url(../img/phone.svg) center/62% no-repeat red;
   border-radius: 50%;
   box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5), 0.5rem 0.5rem 0.5rem 0.1rem rgba(0, 0, 0, 0.7);
-  bottom: -10em; }
+  bottom: -10em;
+  z-index: 99999; }
 
 #skewX {
   background-color: rgba(23, 129, 102, 0.8); }

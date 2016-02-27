@@ -1,0 +1,11 @@
+.media {
+	@include shift(1);
+}
+
+.media-img {
+	display: inline-block;
+	@include span-columns(2);
+	margin-right: 2em;
+}
+
+.media-p {}

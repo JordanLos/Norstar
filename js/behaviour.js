@@ -3,6 +3,11 @@ $( document ).ready(function() {
 	* Section: full window height section of document used by fullpage.js
 	* Carousel: Component that, upon scrolling, brings one element to replace another in the same position
 	****************/
+	
+	$('.action-button_floating').click( function() {
+		TweenMax.to('.contact', 0.5, { autoAlpha:1 })
+	});
+
 
 	var tl = new TimelineLite();
 	function moveToContent() {
@@ -20,7 +25,7 @@ $( document ).ready(function() {
 
 		// D. Bring the action buttion into view
 		.to('.action-button_floating', 0.5, { bottom:'5em' })
-	};
+	}
 
 	var tl1 = new TimelineLite();
 	// Fade out & remove active carousel item; add & fade in next carousel item
