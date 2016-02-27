@@ -6,12 +6,12 @@
 	border-radius: 1em;
 	@include vertical-align;
 	overflow: hidden;
-	z-index: 999;
+	z-index: 9999;
 }
 
 #logo {
 	display: inline-block;
-	z-index: 100;
+	z-index: 10;
 	max-height: 5em;
 	// TODO: make hieght multiople of line-height
 

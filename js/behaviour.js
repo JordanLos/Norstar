@@ -4,9 +4,45 @@ $( document ).ready(function() {
 	* Carousel: Component that, upon scrolling, brings one element to replace another in the same position
 	****************/
 	
+	
+	var tlContact = new TimelineLite();
+	function centerExpand() {
+		TweenMax.to('.action-button_floating', 0.3, {
+			marginTop:'15em',
+			left:'0',
+			bottom:'0',
+			borderRadius:'2%',
+			height:'75%',
+			width:'100%'
+		});
+		TweenMax.to('.contact', 0.5, { 
+			delay:0.3,
+			autoAlpha:1 
+		})
+	}
+	function actionCollapse() {
+		TweenMax.to('.action-button_floating', 0.3, {
+			marginTop:'0em',
+			left:'70%',
+			bottom:'5em',
+			borderRadius:'100%',
+			height:'9rem',
+			width:'9rem'
+		});
+		TweenMax.to('.contact', 0.5, { 
+			delay:0.3,
+			autoAlpha:0 
+		})
+	};
+
 	$('.action-button_floating').click( function() {
-		TweenMax.to('.contact', 0.5, { autoAlpha:1 })
+			centerExpand();
 	});
+	$('.close').click( function() {
+			actionCollapse();
+			console.log('yay');
+	});
+		
 
 
 	var tl = new TimelineLite();

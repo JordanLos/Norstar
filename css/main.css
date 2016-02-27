@@ -122,13 +122,13 @@ $medium: #8B796C;
   top: 50%;
   transform: translateY(-50%);
   overflow: hidden;
-  z-index: 999; }
+  z-index: 9999; }
   .header:last-child {
     margin-right: 0; }
 
 #logo {
   display: inline-block;
-  z-index: 100;
+  z-index: 10;
   max-height: 5em; }
 
 .content {
@@ -142,13 +142,12 @@ $medium: #8B796C;
 
 .contact {
   position: absolute;
-  background-color: rgba(25, 100, 25, 0.8);
   width: 100%;
-  z-index: 998;
+  z-index: 9;
   bottom: 0;
   height: 100%;
   padding-top: 15em;
-  padding-bottom: 5em;
+  padding-bottom: 1em;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -175,7 +174,16 @@ $medium: #8B796C;
   -o-justify-content: space-around;
   justify-content: space-around;
   -ms-flex-pack: distribute;
+  background-color: #178166;
   visibility: hidden; }
+
+.close {
+  height: 3em;
+  margin-right: 2em;
+  -webkit-align-self: flex-end;
+  -moz-align-self: flex-end;
+  align-self: flex-end;
+  -ms-flex-item-align: end; }
 
 .media {
   margin-left: 8.5298%; }
@@ -192,16 +200,23 @@ $medium: #8B796C;
 
 .action-button_floating {
   position: fixed;
-  bottom: 5em;
-  margin-left: 76.76824%;
   height: 9rem;
   width: 9rem;
   padding: 2rem;
-  background: url(../img/phone.svg) center/62% no-repeat red;
+  background: url(../img/phone.svg) center/62% no-repeat #178166;
   border-radius: 50%;
   box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5), 0.5rem 0.5rem 0.5rem 0.1rem rgba(0, 0, 0, 0.7);
-  bottom: -10em;
-  z-index: 99999; }
+  bottom: -10%;
+  left: 70%;
+  z-index: 8; }
+
+.action-button_exapnded {
+  margin-top: 15em;
+  left: 0;
+  bottom: 0;
+  borderRadius: 2%;
+  height: 75%;
+  width: 100%; }
 
 #skewX {
   background-color: rgba(23, 129, 102, 0.8); }

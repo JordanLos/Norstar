@@ -1,20 +1,29 @@
 .contact {
 	position: absolute;
-	background-color: rgba(25,100,25,0.8);
 	width: 100%;
-	z-index: 998; //need to make 1 lower than header
+	z-index: 9; //need to make 1 lower than header
 	bottom: 0;
 	height: 100%;
 	padding-top: 15em; //Totally guess-and check number that is fairly close
-	padding-bottom: 5em;
+	padding-bottom: 1em;
 
 	@include display(flex);
 	@include flex-direction(column);
 	@include justify-content(space-around);
 
+	background-color: $medium-shade;
+
 	// TO be removed by JS
 	visibility: hidden;
 
 }
+
+.close {
+	height:3em;
+	margin-right: 2em;
+	@include align-self(flex-end);
+}
+
+
 
 
