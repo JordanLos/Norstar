@@ -121,8 +121,7 @@ $medium: #8B796C;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  overflow: hidden;
-  z-index: 9999; }
+  overflow: hidden; }
   .header:last-child {
     margin-right: 0; }
 
@@ -164,7 +163,7 @@ $medium: #8B796C;
   overflow: hidden;
   border-radius: 35%;
   transform: translate(-50%);
-  bottom: 35%;
+  top: 50%;
   height: 10%;
   width: 10%;
   left: -50%; }

@@ -3,6 +3,8 @@ $( document ).ready(function() {
 	* Section: full window height section of document used by fullpage.js
 	* Carousel: Component that, upon scrolling, brings one element to replace another in the same position
 	****************/
+
+	var logoHeight = $('#logo').outerHeight( true ) + 'px';
 	
 	
 	var tlContact = new TimelineLite();
@@ -12,20 +14,22 @@ $( document ).ready(function() {
 		})
 		TweenMax.to('.contact', 0.5, {
 			delay:0.3,
-			bottom:'0',
+			top:'0%', 
 			height:'100%',
 			width:'100%',
 			borderRadius:'0%',
-			paddingTop:'15em',
+			marginTop:'7em', // taken from compotents/_header #logo 'padding-top:1em' + 'max-height: 5em';
+			paddingTop:'6em',
 			paddingBottom:'1em'
 		})
 	}
 	function actionCollapse() {
 		TweenMax.to('.contact', 0.3, {
-			bottom:'35%',
+			top:'50%',
 			height:'10%',
 			width:'10%',
 			borderRadius:'35%',
+			marginTop:'0em',
 			paddingTop:'0em',
 			paddingBottom:'0em'
 		});
