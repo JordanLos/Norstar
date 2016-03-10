@@ -4,47 +4,56 @@ $( document ).ready(function() {
 	* Carousel: Component that, upon scrolling, brings one element to replace another in the same position
 	****************/
 
-	var logoHeight = $('#logo').outerHeight( true ) + 'px';
-	
 	
 	var tlContact = new TimelineLite();
 	function centerExpand() {
+		var windowHeight = $(window).outerHeight( true );
+		var logoHeight = $('#logo').outerHeight( true );
+		var allButLogo = 100 * (1 - (logoHeight / windowHeight));
+		console.log(allButLogo);
 		TweenMax.to('.contact', 0.3, {
 			left:'50%',
 		})
 		TweenMax.to('.contact', 0.5, {
 			delay:0.3,
 			top:'0%', 
-			height:'100%',
+			height: allButLogo + '%',
 			width:'100%',
 			borderRadius:'0%',
 			marginTop:'7em', // taken from compotents/_header #logo 'padding-top:1em' + 'max-height: 5em';
-			paddingTop:'6em',
-			paddingBottom:'1em'
 		})
+		TweenMax.to('.media', 0.3, {
+			delay:0.3,
+			autoAlpha:1
+		});
 	}
 	function actionCollapse() {
 		TweenMax.to('.contact', 0.3, {
 			top:'50%',
-			height:'10%',
-			width:'10%',
+			height:'8%',
+			width:'12%',
 			borderRadius:'35%',
-			marginTop:'0em',
-			paddingTop:'0em',
-			paddingBottom:'0em'
+		});
+		TweenMax.to('.media', 0.3, {
+			autoAlpha:0
 		});
 		TweenMax.to('.contact', 0.3, {
 			delay:0.3,
 			left:'-50%',
-		})
+		});
 	};
 
+	var actionClick = 0;
 	$('.action-button_floating').click( function() {
+		if (actionClick == 0) {
 			centerExpand();
-	});
-	$('.close').click( function() {
+			actionClick = 1;
+			console.log(actionClick);
+		} else if (actionClick == 1) {
 			actionCollapse();
-			console.log('yay');
+			actionClick = 0;
+			console.log(actionClick);
+		}
 	});
 		
 
@@ -64,7 +73,7 @@ $( document ).ready(function() {
 		.to('.header', 0.5, { marginLeft:'0', width:'100%', borderRadius:'0em' }, "scene2" )
 
 		// D. Bring the action buttion into view
-		.to('.action-button_floating', 0.5, { bottom:'5em' })
+		.to('.action-button_floating', 0.5, { bottom:'3em' })
 	}
 
 	var tl1 = new TimelineLite();

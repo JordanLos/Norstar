@@ -1,7 +1,13 @@
 // TODO: Change name from main to something else, its confusing
 
 .content {
+	position: relative;
 	@include span-columns(10);
 	@include shift(1);
+	z-index: 0;
 
+}
+
+body {
+	background: linear-gradient(#fff 60%, #204B82);
 }

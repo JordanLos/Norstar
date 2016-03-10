@@ -11,8 +11,8 @@ html {
   box-sizing: inhereit; }
 
 body {
-  background: url(../img/dirt.jpeg);
-  color: white; }
+  background: linear-gradient(rgba(32, 75, 130, 0.8) rgba(32, 75, 130, 0.8)), url(../img/dirt.jpeg);
+  color: #0C4335; }
 
 /*****TYPOGRAPHY*****/
 html {
@@ -121,7 +121,8 @@ $medium: #8B796C;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: 1; }
   .header:last-child {
     margin-right: 0; }
 
@@ -131,13 +132,18 @@ $medium: #8B796C;
   max-height: 5em; }
 
 .content {
+  position: relative;
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 82.94039%;
-  margin-left: 8.5298%; }
+  margin-left: 8.5298%;
+  z-index: 0; }
   .content:last-child {
     margin-right: 0; }
+
+body {
+  background: linear-gradient(#fff 60%, #204B82); }
 
 .contact {
   position: absolute;
@@ -160,6 +166,16 @@ $medium: #8B796C;
   -moz-flex-direction: column;
   flex-direction: column;
   -ms-flex-direction: column;
+  -webkit-box-pack: distribute;
+  -moz-box-pack: distribute;
+  box-pack: distribute;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  -o-justify-content: space-around;
+  justify-content: space-around;
+  -ms-flex-pack: distribute;
+  padding: 2em 0;
   overflow: hidden;
   border-radius: 35%;
   transform: translate(-50%);
@@ -177,17 +193,15 @@ $medium: #8B796C;
   -ms-flex-item-align: end; }
 
 .media {
-  margin-left: 8.5298%; }
+  margin-left: 17.05961%;
+  visibility: 0; }
 
 .media-img {
   display: inline-block;
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 14.70196%;
-  margin-right: 2em; }
-  .media-img:last-child {
-    margin-right: 0; }
+  max-width: 3em;
+  max-height: 3em;
+  margin-right: 2em;
+  vertical-align: middle; }
 
 .action-button_floating {
   position: fixed;
@@ -197,20 +211,13 @@ $medium: #8B796C;
   background: url(../img/phone.svg) center/62% no-repeat #178166;
   border-radius: 50%;
   box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5), 0.5rem 0.5rem 0.5rem 0.1rem rgba(0, 0, 0, 0.7);
-  bottom: -10%;
-  left: 70%;
-  z-index: 8; }
-
-.action-button_exapnded {
-  margin-top: 15em;
-  left: 0;
-  bottom: 0;
-  borderRadius: 2%;
-  height: 75%;
-  width: 100%; }
+  bottom: -5em;
+  right: 2em;
+  z-index: 11; }
 
 #skewX {
-  background-color: rgba(23, 129, 102, 0.8); }
+  background-color: rgba(23, 129, 102, 0.8);
+  background-color: #178166; }
 
 /****LANDING****/
 #skewX {

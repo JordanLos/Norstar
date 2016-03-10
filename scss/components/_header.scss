@@ -6,6 +6,7 @@
 	border-radius: 1em;
 	@include vertical-align;
 	overflow: hidden;
+	z-index: 1;
 }
 
 #logo {
