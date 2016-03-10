@@ -1,20 +1,19 @@
 .contact {
 	position: absolute;
-	width: 100%;
 	z-index: 9; //need to make 1 lower than header
-	bottom: 0;
-	height: 100%;
-	padding-top: 15em; //Totally guess-and check number that is fairly close
-	padding-bottom: 1em;
-
-	@include display(flex);
-	@include flex-direction(column);
-	@include justify-content(space-around);
 
 	background-color: $medium-shade;
+	@include display(flex);
+	@include flex-direction(column);
+	overflow: hidden;
 
-	// TO be removed by JS
-	visibility: hidden;
+	border-radius: 35%;
+	transform: translate(-50%);
+	bottom: 35%;
+	height: 10%;
+	width: 10%;
+
+	left: -50%;
 
 }
 
@@ -23,7 +22,4 @@
 	margin-right: 2em;
 	@include align-self(flex-end);
 }
-
-
-
 

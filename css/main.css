@@ -142,12 +142,8 @@ $medium: #8B796C;
 
 .contact {
   position: absolute;
-  width: 100%;
   z-index: 9;
-  bottom: 0;
-  height: 100%;
-  padding-top: 15em;
-  padding-bottom: 1em;
+  background-color: #178166;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -165,17 +161,13 @@ $medium: #8B796C;
   -moz-flex-direction: column;
   flex-direction: column;
   -ms-flex-direction: column;
-  -webkit-box-pack: distribute;
-  -moz-box-pack: distribute;
-  box-pack: distribute;
-  -webkit-justify-content: space-around;
-  -moz-justify-content: space-around;
-  -ms-justify-content: space-around;
-  -o-justify-content: space-around;
-  justify-content: space-around;
-  -ms-flex-pack: distribute;
-  background-color: #178166;
-  visibility: hidden; }
+  overflow: hidden;
+  border-radius: 35%;
+  transform: translate(-50%);
+  bottom: 35%;
+  height: 10%;
+  width: 10%;
+  left: -50%; }
 
 .close {
   height: 3em;

@@ -7,31 +7,31 @@ $( document ).ready(function() {
 	
 	var tlContact = new TimelineLite();
 	function centerExpand() {
-		TweenMax.to('.action-button_floating', 0.3, {
-			marginTop:'15em',
-			left:'0',
-			bottom:'0',
-			borderRadius:'2%',
-			height:'75%',
-			width:'100%'
-		});
-		TweenMax.to('.contact', 0.5, { 
+		TweenMax.to('.contact', 0.3, {
+			left:'50%',
+		})
+		TweenMax.to('.contact', 0.5, {
 			delay:0.3,
-			autoAlpha:1 
+			bottom:'0',
+			height:'100%',
+			width:'100%',
+			borderRadius:'0%',
+			paddingTop:'15em',
+			paddingBottom:'1em'
 		})
 	}
 	function actionCollapse() {
-		TweenMax.to('.action-button_floating', 0.3, {
-			marginTop:'0em',
-			left:'70%',
-			bottom:'5em',
-			borderRadius:'100%',
-			height:'9rem',
-			width:'9rem'
+		TweenMax.to('.contact', 0.3, {
+			bottom:'35%',
+			height:'10%',
+			width:'10%',
+			borderRadius:'35%',
+			paddingTop:'0em',
+			paddingBottom:'0em'
 		});
-		TweenMax.to('.contact', 0.5, { 
+		TweenMax.to('.contact', 0.3, {
 			delay:0.3,
-			autoAlpha:0 
+			left:'-50%',
 		})
 	};
 
