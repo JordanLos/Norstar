@@ -11,7 +11,6 @@ html {
   box-sizing: inhereit; }
 
 body {
-  background: linear-gradient(rgba(32, 75, 130, 0.8) rgba(32, 75, 130, 0.8)), url(../img/dirt.jpeg);
   color: #0C4335; }
 
 /*****TYPOGRAPHY*****/
@@ -117,12 +116,14 @@ $medium: #8B796C;
   margin-left: 17.05961%;
   padding: 1em;
   background-color: white;
-  border-radius: 1em;
+  border-radius: 5px;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
   overflow: hidden;
-  z-index: 1; }
+  z-index: 1;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.2s ease-in-out; }
   .header:last-child {
     margin-right: 0; }
 
@@ -138,12 +139,13 @@ $medium: #8B796C;
   margin-right: 2.35765%;
   width: 82.94039%;
   margin-left: 8.5298%;
-  z-index: 0; }
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+  padding: 2em 1em;
+  top: 5%; }
   .content:last-child {
     margin-right: 0; }
-
-body {
-  background: linear-gradient(#fff 60%, #204B82); }
 
 .contact {
   position: absolute;
@@ -210,23 +212,25 @@ body {
   padding: 2rem;
   background: url(../img/phone.svg) center/62% no-repeat #178166;
   border-radius: 50%;
-  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5), 0.5rem 0.5rem 0.5rem 0.1rem rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23);
   bottom: -5em;
   right: 2em;
   z-index: 11; }
 
 #skewX {
   background-color: rgba(23, 129, 102, 0.8);
-  background-color: #178166; }
+  background-color: #178166;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23); }
 
 /****LANDING****/
 #skewX {
-  height: 100%;
   position: fixed;
-  z-index: -10;
+  height: 100%;
+  width: 90%;
   left: 50%;
+  bottom: 0%;
   transform: skewX(-20deg);
-  width: 90%; }
+  border-radius: 0px; }
 
 .carousel {
   text-align: center;

@@ -2,16 +2,16 @@
 #skewX {	
 	background-color: rgba($medium-shade, 0.8);
 	background-color: #178166;
+	@include elevation-2;
 }
 
 /****LANDING****/
 #skewX {
-	height: 100%;
 	position: fixed;
-	z-index: -10;
-	// margin-left should be a percetnage equivalent to the % above 50% width.
-	left: 50%;
-	transform: skewX(-20deg);
+	height: 100%;
 	width: 90%;
+	left: 50%;
+	bottom: 0%;
+	transform: skewX(-20deg);
+	border-radius: 0px;
 }
-

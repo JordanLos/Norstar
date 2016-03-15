@@ -4,7 +4,12 @@ $( document ).ready(function() {
 	* Carousel: Component that, upon scrolling, brings one element to replace another in the same position
 	****************/
 
+ 
 	
+	$('.bezier-test').click(function() {
+
+
+	});		
 	var tlContact = new TimelineLite();
 	function centerExpand() {
 		var windowHeight = $(window).outerHeight( true );
@@ -61,11 +66,37 @@ $( document ).ready(function() {
 	var tl = new TimelineLite();
 	function moveToContent() {
 		// A. Unskew and move the colored div
-		tl.to('#skewX', 0.25, { transform: 'skewX(0)'})
-		.to('#skewX', 0.25, {left: '100%' }, "open" )
-
+		/*
+		tl.to('#skewX', 0.25, { 
+			transform: 'skewY(0deg)'
+		})
+		.to('#skewX', 0.25, { 
+			top:'85%'
+		})
+		*/
+		tl.to('#skewX', 0.2, {
+			transform: 'skewY(0deg)',
+			ease:Power1.easeInOut
+		})
+		.to('#skewX', 0.2, {
+			bottom:'50%',
+			left:'90%',
+			height:'10%',
+			width:'15%',
+			borderRadius:'5px',
+			ease:Power1.easeInOut
+		})	
+		.to('#skewX', 0.2, {
+			bezier:{type:'cubic', values:[{left:'90%',bottom:'50%'},{left:'65%',bottom:'50%'},{left:'42.5%',bottom:'35%'}, {left:'42.5%', bottom:'0%'}]}, ease:Power1.easeInOut
+		})
+		.to('#skewX', 0.15, {
+			height:'10%',
+			width:'100%',
+			left:'0%',
+			ease:Power1.easeInOut
+		}, "-=0.1")
 		// B. Move the header from center page to the top of the page and remove the company slogan
-		.to('.header', 0.5, {transform:"translateY(-50%)", top:'0' },"scene1" )
+		.to('.header', 0.5, {transform:"translateY(0%)", top:'0%' },"scene1" )
 		.to('#slogan', 0.5, { display:'none', autoAlpha:0 }, "scene1")
 		
 		// C. Expand the header to take up the entire width of the screen and add the carousel text

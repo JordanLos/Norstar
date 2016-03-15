@@ -10,9 +10,7 @@
 		no-repeat
 		$medium-shade;
 	border-radius: 50%;
-	box-shadow:
-		0 0 0.25rem rgba(0,0,0,0.5),
-		0.5rem 0.5rem 0.5rem 0.1rem rgba(0,0,0,0.7);
+	@include elevation-3;
 	
 	// Initial position for Javascript
 	bottom: -5em;
