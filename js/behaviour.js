@@ -84,6 +84,7 @@ $( document ).ready(function() {
 			height:'10%',
 			width:'15%',
 			borderRadius:'5px',
+			backgroundColor:'#39937C',
 			ease:Power1.easeInOut
 		})	
 		.to('#skewX', 0.2, {
@@ -98,6 +99,7 @@ $( document ).ready(function() {
 		// B. Move the header from center page to the top of the page and remove the company slogan
 		.to('.header', 0.5, {transform:"translateY(0%)", top:'0%' },"scene1" )
 		.to('#slogan', 0.5, { display:'none', autoAlpha:0 }, "scene1")
+		.to('body', 0.3, { backgroundColor:'#87D8CF' }, "scene1")
 		
 		// C. Expand the header to take up the entire width of the screen and add the carousel text
 		.to(['#carousel1', '.carousel-header'], 0.5, {autoAlpha:1, display:'block' }, "scene2", "-=0.3" )

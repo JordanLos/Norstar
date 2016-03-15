@@ -147,6 +147,9 @@ $medium: #8B796C;
   .content:last-child {
     margin-right: 0; }
 
+body {
+  background-color: #B7D8CF; }
+
 .contact {
   position: absolute;
   z-index: 9;
