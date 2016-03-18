@@ -4,10 +4,8 @@ $( document ).ready(function() {
 	* Carousel: Component that, upon scrolling, brings one element to replace another in the same position
 	****************/
 
- 
-	
 
-
+/******* CONTACT BUTTON *********/
 	var tlContact = new TimelineLite();
 	function centerExpand() {
 		TweenMax.to('.contact', 0.05, {
@@ -16,8 +14,10 @@ $( document ).ready(function() {
 		TweenMax.to('.contact', 0.2, {
 			top:'10%',
 			height:'50%',
-			width:'82.94039%',
-			marginLeft:'8.5298%'
+			//width:'82.94039%',
+			//marginLeft:'8.5298%'
+			width:'100%',
+			marginLeft:'0%'
 		})
 		TweenMax.to('.media', 0.2, {
 			delay:0.2,
@@ -53,41 +53,45 @@ $( document ).ready(function() {
 	});
 		
 
-
+/********* OPENING SCENE **********/
 	var tl = new TimelineLite();
 	function moveToContent() {
 		// A. Unskew and move the colored div
-		tl.to('#skewX', 0.2, {
+		tl.to('#skewX', 0.3, {
 			transform: 'skewY(0deg)',
-			ease:Power1.easeInOut
+			ease:Power1.easeInOut,
 		})
 		.to('#skewX', 0.4, {
+			delay: 0.2,
 			height:'10%',
 			width:'100%',
 			left:'0%',
 			top:'90%',
+			backgroundColor:'#E1EFEB',
 			ease:Power1.easeInOut
-		})	
+		}, "open")	
 		// B. Move the header from center page to the top of the page and remove the company slogan
 		.to('.header', 0.5, {
-			transform:"translateY(0%)"
-			, top:'0%' 
-		},"scene1" )
+			delay: 0.2,
+			transform:"translateY(0%)",
+			top:'0%' 
+		},"open" )
 		.to('#slogan', 0.5, { 
+			delay: 0.2,
 			display:'none', 
 			autoAlpha:0
-		}, "scene1")
+		}, "open")
 
 		
 		// C. Expand the header to take up the entire width of the screen and add the carousel text
 		.to(['#carousel1', '.carousel-header'], 0.5, {
 			autoAlpha:1, 
 			display:'block' 
-		}, "scene2", "-=0.3" )
+		}, "enterContent")
 		.to('.header', 0.5, { 
 			marginLeft:'0', 
 			width:'100%', 
-		}, "scene2" )
+		}, "enterContent" )
 
 		.from('#section1', 0.4, {
 			margin:'50%'
@@ -99,13 +103,13 @@ $( document ).ready(function() {
 		}, "enterContent")
 		.to('#section1 > p', 0.4, {
 			autoAlpha:1
-		})
+		}, "enterContent")
 		// E. Bring the action buttion into view
 		.to('.action-button_floating', 0.3, { 
 			padding:'2rem',
 			height:'9rem',
 			width:'9rem',
-		})
+		}, "enterContent")
 		.to('.action-button_floating', 0.2, { 
 			background:'url(../img/phone.svg) center / 62% no-repeat #ECA400' //red accent
 		})
@@ -127,6 +131,8 @@ $( document ).ready(function() {
 		}, "+=0.35")
 	};
 
+	
+/********** FULLPAGE *********/	
 	$('#fullpage').fullpage({
 		scrollingSpeed: 1000,
 		easingcss3: 'cubic-bezier(0.55 ,0.0 ,0.1 ,1.0)',

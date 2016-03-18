@@ -12,11 +12,10 @@ html(lang="en")
 		script(src="https://use.typekit.net/sjx5bzx.js")
 		script try{Typekit.load({ async: true });}catch(e){}
 		script(src='js/behaviour.js')
-
 	body
 		.overlay
 			.header
-				img#logo(src='img/norstar.svg')
+				img.svg#logo(src='img/norstar.svg')
 				.carousel
 					.carousel-fixed
 						#slogan 
@@ -30,32 +29,64 @@ html(lang="en")
 						h1#carousel4 Your Best Option
 			.contact
 				.media
-					img.media-img(src='img/phone.svg') 
+					img.media-img.svg(src='img/phone.svg') 
 					a.media-p  555.555.5555
 				.media
-					img.media-img(src='img/map.svg') 
+					img.media-img.svg(src='img/pin.svg') 
 					a.media-p  12345 Street
 				.media
 					// TODO: change phone to mail
-					img.media-img(src='img/phone.svg') 
+					img.media-img.svg(src='img/mail.svg') 
 					a.media-p  email@email.com
 			//	img.close(src='img/phone.svg')
 			#skewX
-			.action-button_floating
+			.action-button_floating.svg
 
 		#fullpage
 			.section
 			.section
 				.content#section1
+					img.icon.svg(src='img/recycle.svg')
 					p By recycling impacted soils, we can avoid costly intermediate solutions like landfills. Our commitment to resourcefulness means we find new environmentally friendly uses for contaminated soils isntead of just moving the liability elsewhere.
 			.section#section2
 				.content
+					img.icon.svg(src='img/money.svg')
 					p Businesses shouldn't have to choose between doing the right thing for the environment and saving money. We are commited to offering significant savings on remediation costs because businesses and the environment benefit when we can accomplish the same goals with less resources.
 			.section#section3
 				.content
+					img.icon.svg(src='img/kids.svg')
 					p Why pass the liability to the next generation? Our commitment to sustainability means we don't move contaminants, we elimiate them. Our children shouldn't have to deal with the same contaminants in a different location.
 			.section#section4
 				.content
+					img.icon.svg(src='img/call.svg')
 					p Want to learn more about Norstar Environmental or curious about recycling other materials? Contact us
+		script(type='text/javascript').
+			/* Replace all SVG images with inline SVG */
+			jQuery('img.svg').each(function(){
+				var $img = jQuery(this);
+				var imgID = $img.attr('id');
+				var imgClass = $img.attr('class');
+				var imgURL = $img.attr('src');
 
+				jQuery.get(imgURL, function(data) {
+					// Get the SVG tag, ignore the rest
+					var $svg = jQuery(data).find('svg');
+
+					// Add replaced image's ID to the new SVG
+					if(typeof imgID !== 'undefined') {
+						$svg = $svg.attr('id', imgID);
+					}
+					// Add replaced image's classes to the new SVG
+					if(typeof imgClass !== 'undefined') {
+						$svg = $svg.attr('class', imgClass+' replaced-svg');
+					}
+
+					// Remove any invalid XML tags as per http://validator.w3.org
+					$svg = $svg.removeAttr('xmlns:a');
+
+					// Replace image with new SVG
+					$img.replaceWith($svg);
+
+				}, 'xml');
+			});
 

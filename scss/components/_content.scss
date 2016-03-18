@@ -6,14 +6,16 @@
 	@include elevation-2;
 
 	display: flex;
-	align-items: flex-end;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
 	height: 50%;
 	padding: 2em;
 	margin-top: 5em;
 
 	border-radius: $b-radius;
-	background-color: $brand-color;
-	color: $text-light-color;
+	background-color: $background-light-color;
+	color: $text-dark-color;
 }
 
 #section1 {
@@ -38,3 +40,25 @@ body {
 		url(../img/dirt.jpeg);
 }
 
+.icon {
+	display: inline-block;
+	max-width: 7em;
+	max-height: 7em;
+}
+.icon path {
+	fill: $brand-color;
+}
+.icon {
+	padding: 0.5em;
+	border-radius: 15%;
+	border: 0.3em solid $brand-color;
+	background-color: $background-light-color;
+}
+
+.icon:hover path {
+	fill: $background-light-color;
+}
+.icon:hover {
+	background-color: $brand-color;
+	border-color: $background-light-color;
+}
