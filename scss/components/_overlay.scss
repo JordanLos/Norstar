@@ -2,6 +2,7 @@
 // The overlay component will contain any modules that stay fixed as the pages
 // change
 .overlay {
+	position: absolute; //REQUIRED for fullpage.js to work on mobile (depth) and still show .contact
 	height: 100vh;
 	width: 100%;
 }

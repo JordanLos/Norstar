@@ -1,0 +1,14 @@
+.media {
+	@include shift(1);
+	visibility: 0; // for GSAP to animate in
+}
+
+.media-img {
+	display: inline-block;
+	max-width: 3em;
+	max-height: 3em;
+	margin-right: 2em;
+	vertical-align: middle;
+}
+
+.media-p {}

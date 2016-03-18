@@ -1,0 +1,28 @@
+.contact {
+
+	background-color: $background-light-color;
+
+
+	@include span-columns(10);
+	@include shift(1);
+	@include display(flex);
+	@include flex-direction(column);
+	@include justify-content(space-around);
+	overflow: hidden;
+
+	position: fixed;
+	height: 00%;
+	width: 00%;
+
+	margin-top: 10em;
+	margin-left: 50%;
+	top: 25%;
+
+
+	border-radius: $b-radius;
+	@include elevation-3;
+
+	z-index:5;
+
+}
+

@@ -10,10 +10,6 @@ html {
 *, *:after, *:before {
   box-sizing: inhereit; }
 
-body {
-  background: url(../img/dirt.jpeg);
-  color: white; }
-
 /*****TYPOGRAPHY*****/
 html {
   font-size: 10px; }
@@ -105,7 +101,17 @@ $dark: #5B4C3E;
 $medium: #8B796C;
 */
 /* MUTED PALETTE */
+/* Decorations */
+/*
+$brand-color {}
+$background-light-color {}
+$background-dark-color
+$accent-color {}
+$text-dark-color {}
+$text-light-color {}
+*/
 .overlay {
+  position: absolute;
   height: 100vh;
   width: 100%; }
 
@@ -117,19 +123,20 @@ $medium: #8B796C;
   margin-left: 17.05961%;
   padding: 1em;
   background-color: white;
-  border-radius: 1em;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  position: fixed;
   overflow: hidden;
-  z-index: 999; }
+  position: relative;
+  z-index: 2;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 5px; }
   .header:last-child {
     margin-right: 0; }
 
 #logo {
   display: inline-block;
-  z-index: 100;
+  z-index: 10;
   max-height: 5em; }
 
 .content {
@@ -138,33 +145,124 @@ $medium: #8B796C;
   margin-right: 2.35765%;
   width: 82.94039%;
   margin-left: 8.5298%;
-  margin-top: 22em; }
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
+  align-items: flex-end;
+  height: 50%;
+  padding: 2em;
+  margin-top: 5em;
+  border-radius: 5px;
+  background-color: #178166;
+  color: #E1EFEB; }
   .content:last-child {
     margin-right: 0; }
 
-.action-button_floating {
+#section1 {
+  height: 0%;
+  width: 0%;
+  padding: 0em;
+  overflow: hidden; }
+  #section1 > p {
+    visibility: hidden; }
+
+body {
+  background: linear-gradient(rgba(23, 129, 102, 0.1), rgba(23, 129, 102, 0.1)), url(../img/dirt.jpeg); }
+
+.contact {
+  background-color: #EDE6E3;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-left: 8.5298%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-pack: distribute;
+  -moz-box-pack: distribute;
+  box-pack: distribute;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  -o-justify-content: space-around;
+  justify-content: space-around;
+  -ms-flex-pack: distribute;
+  overflow: hidden;
   position: fixed;
-  bottom: 5em;
-  margin-left: 76.76824%;
-  height: 9rem;
-  width: 9rem;
-  padding: 2rem;
-  background: url(../img/phone.svg) center/62% no-repeat red;
+  height: 00%;
+  width: 00%;
+  margin-top: 10em;
+  margin-left: 50%;
+  top: 25%;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23);
+  z-index: 5; }
+  .contact:last-child {
+    margin-right: 0; }
+
+.media {
+  margin-left: 8.5298%;
+  visibility: 0; }
+
+.media-img {
+  display: inline-block;
+  max-width: 3em;
+  max-height: 3em;
+  margin-right: 2em;
+  vertical-align: middle; }
+
+.action-button_floating {
+  position: absolute;
+  z-index: 3;
   border-radius: 50%;
-  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5), 0.5rem 0.5rem 0.5rem 0.1rem rgba(0, 0, 0, 0.7);
-  bottom: -10em; }
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23);
+  bottom: 3em;
+  right: 2em;
+  /* Target Properties 
+  	height: 9rem;
+  	width: 9rem;
+  	padding: 2rem;
+  	background:
+  		url(../img/phone.svg) 
+  		center / 62% 
+  		no-repeat 
+  		#178166;
+  */
+  /* Properties set for Javascript animations */
+  height: 0em;
+  width: 0em;
+  background-color: #F9E3B0; }
 
 #skewX {
-  background-color: rgba(23, 129, 102, 0.8); }
+  background-color: #178166;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23); }
 
 /****LANDING****/
 #skewX {
-  height: 100%;
   position: fixed;
-  z-index: -10;
-  left: 50%;
-  transform: skewX(-20deg);
-  width: 90%; }
+  height: 150%;
+  width: 100%;
+  left: 0%;
+  top: 50%;
+  transform: skewY(-70deg);
+  z-index: 1; }
+
+#fullpage {
+  z-index: 1; }
 
 .carousel {
   text-align: center;

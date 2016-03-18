@@ -1,0 +1,40 @@
+// TODO: Change name from main to something else, its confusing
+
+.content {
+	@include span-columns(10);
+	@include shift(1);
+	@include elevation-2;
+
+	display: flex;
+	align-items: flex-end;
+	height: 50%;
+	padding: 2em;
+	margin-top: 5em;
+
+	border-radius: $b-radius;
+	background-color: $brand-color;
+	color: $text-light-color;
+}
+
+#section1 {
+	height: 0%;
+	width: 0%;
+	padding: 0em;
+	overflow: hidden;
+	> p {
+		visibility: hidden;
+	}
+}
+#section2,
+#section3,
+#section4,
+#section5 {
+	//visibility: hidden; // To be altered by Javascript
+}
+
+body {
+	background:
+		linear-gradient(rgba($brand-color, 0.1), rgba($brand-color, 0.1)),
+		url(../img/dirt.jpeg);
+}
+

@@ -1,15 +1,20 @@
 // Skew Color
 #skewX {	
-	background-color: rgba($medium-shade, 0.8);
+	background-color: $brand-color;
+	@include elevation-2;
 }
 
 /****LANDING****/
 #skewX {
-	height: 100%;
 	position: fixed;
-	z-index: -10;
-	// margin-left should be a percetnage equivalent to the % above 50% width.
-	left: 50%;
-	transform: skewX(-20deg);
-	width: 90%;
+	height: 150%;
+	width: 100%;
+	left: 0%;
+	top: 50%;
+	transform: skewY(-70deg);
+	z-index: 1;
+}
+
+#fullpage {
+	z-index: 1;
 }

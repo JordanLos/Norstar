@@ -3,17 +3,20 @@
 	@include shift(2);
 	@include pad(1em);
 	background-color: white;
-	border-radius: 1em;
 	@include vertical-align;
-	position: fixed;
 	overflow: hidden;
-	z-index: 999;
+	position: relative;
+	z-index: 2;
+	@include elevation-1;
+	
+	border-radius: $b-radius;
 }
 
 #logo {
 	display: inline-block;
-	z-index: 100;
+	z-index: 10;
 	max-height: 5em;
 	// TODO: make hieght multiople of line-height
 
 }
+
