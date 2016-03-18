@@ -1,21 +1,27 @@
 .action-button_floating {
 
-	position: fixed;
+	position: absolute;
+	z-index: 3;
+	border-radius: 50%;
+	@include elevation-3;
+	
+	bottom: 3em;
+	right: 2em;
+
+/* Target Properties 
 	height: 9rem;
 	width: 9rem;
 	padding: 2rem;
 	background:
-		url(../img/phone.svg)
-		center / 62%
-		no-repeat
-		$medium-shade;
-	border-radius: 50%;
-	@include elevation-3;
-	
-	// Initial position for Javascript
-	bottom: -5em;
-	right: 2em;
-	z-index: 11;
+		url(../img/phone.svg) 
+		center / 62% 
+		no-repeat 
+		#178166;
+*/
+/* Properties set for Javascript animations */
+	height: 0em;
+	width: 0em;
+	background-color: $accent-color;
 	
 }
 

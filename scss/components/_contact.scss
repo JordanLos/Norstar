@@ -1,27 +1,28 @@
 .contact {
-	position: absolute;
-	z-index: 9; //need to make 1 lower than header
 
-	background-color: $medium-shade;
+	background-color: $background-light-color;
+
+
+	@include span-columns(10);
+	@include shift(1);
 	@include display(flex);
 	@include flex-direction(column);
 	@include justify-content(space-around);
-	padding: 2em 0;
 	overflow: hidden;
 
-	border-radius: 35%;
-	transform: translate(-50%);
-	top: 50%;
-	height: 10%;
-	width: 10%;
+	position: fixed;
+	height: 00%;
+	width: 00%;
 
-	left: -50%;
+	margin-top: 10em;
+	margin-left: 50%;
+	top: 25%;
 
-}
 
-.close {
-	height:3em;
-	margin-right: 2em;
-	@include align-self(flex-end);
+	border-radius: $b-radius;
+	@include elevation-3;
+
+	z-index:5;
+
 }
 

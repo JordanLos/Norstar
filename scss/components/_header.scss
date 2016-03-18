@@ -3,12 +3,13 @@
 	@include shift(2);
 	@include pad(1em);
 	background-color: white;
-	border-radius: 5px;
 	@include vertical-align;
 	overflow: hidden;
-	z-index: 1;
+	position: relative;
+	z-index: 2;
 	@include elevation-1;
 	
+	border-radius: $b-radius;
 }
 
 #logo {

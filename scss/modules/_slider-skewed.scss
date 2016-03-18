@@ -1,17 +1,20 @@
 // Skew Color
 #skewX {	
-	background-color: rgba($medium-shade, 0.8);
-	background-color: #178166;
+	background-color: $brand-color;
 	@include elevation-2;
 }
 
 /****LANDING****/
 #skewX {
 	position: fixed;
-	height: 100%;
-	width: 90%;
-	left: 50%;
-	bottom: 0%;
-	transform: skewX(-20deg);
-	border-radius: 0px;
+	height: 150%;
+	width: 100%;
+	left: 0%;
+	top: 50%;
+	transform: skewY(-70deg);
+	z-index: 1;
+}
+
+#fullpage {
+	z-index: 1;
 }
