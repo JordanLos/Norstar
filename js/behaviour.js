@@ -5,6 +5,13 @@ $( document ).ready(function() {
 	****************/
 
 
+window.onload = function() {
+	TweenMax.to('.page-down', 0.5, {
+		delay: 0.6,
+		bottom:'0%'
+	});
+};
+
 /******* CONTACT BUTTON *********/
 	var tlContact = new TimelineLite();
 	function centerExpand() {
@@ -63,18 +70,18 @@ $( document ).ready(function() {
 		})
 		.to('#skewX', 0.4, {
 			delay: 0.2,
-			height:'10%',
+			height:'84%',
 			width:'100%',
 			left:'0%',
-			top:'90%',
-			backgroundColor:'#E1EFEB',
+			top:'8%',
+			backgroundColor:'#8bc0b3',
 			ease:Power1.easeInOut
 		}, "open")	
 		// B. Move the header from center page to the top of the page and remove the company slogan
 		.to('.header', 0.5, {
 			delay: 0.2,
 			transform:"translateY(0%)",
-			top:'0%' 
+			top:'12%' 
 		},"open" )
 		.to('#slogan', 0.5, { 
 			delay: 0.2,
@@ -89,8 +96,8 @@ $( document ).ready(function() {
 			display:'block' 
 		}, "enterContent")
 		.to('.header', 0.5, { 
-			marginLeft:'0', 
-			width:'100%', 
+			width:'82.94039%', // Copied from bourbon grid width of 10/12
+			marginLeft:'8.5298%',
 		}, "enterContent" )
 
 		.from('#section1', 0.4, {
@@ -113,6 +120,9 @@ $( document ).ready(function() {
 		.to('.action-button_floating', 0.2, { 
 			background:'url(../img/phone.svg) center / 62% no-repeat #ECA400' //red accent
 		})
+		.to('.page-up', 0.3, {
+			top:'0%'
+		}, "enterContent")
 	}
 
 	var tl1 = new TimelineLite(); // For moving carousel headers
@@ -133,6 +143,14 @@ $( document ).ready(function() {
 
 	
 /********** FULLPAGE *********/	
+	$('.page-up').click(function(e){
+		e.preventDefault();
+		$.fn.fullpage.moveSectionUp();
+	})
+	$('.page-down').click(function(e){
+		e.preventDefault();
+		$.fn.fullpage.moveSectionDown();
+	})
 	$('#fullpage').fullpage({
 		scrollingSpeed: 1000,
 		easingcss3: 'cubic-bezier(0.55 ,0.0 ,0.1 ,1.0)',
@@ -163,8 +181,21 @@ $( document ).ready(function() {
 			} else if (index > 2 && direction == 'up') {
 				moveCarousel(headerActive, headerPrevious); 
 				moveContent(contentActive, contentPrevious);
+				console.log(index.length);
 			};
-		}
+		},
+		'afterLoad': function(anchorLink, index){
+            // Section indexes in fullpage start at 1
+            if(index === $('#fullpage .section').length){
+                TweenMax.to('.page-down', 0.15, {
+					bottom:'-8%'
+				})
+            } else if(index === $('#fullpage .section').length -1){
+                TweenMax.to('.page-down', 0.15, {
+					bottom:'0%'
+				})
+            }
+        }
 	});
 
 });

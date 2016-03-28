@@ -7,7 +7,7 @@
 	overflow: hidden;
 	position: relative;
 	z-index: 2;
-	@include elevation-1;
+	@include elevation-2;
 	
 	border-radius: $b-radius;
 }
@@ -19,4 +19,29 @@
 	// TODO: make hieght multiople of line-height
 
 }
+
+.page-down, .page-up {
+	position: absolute;
+	width: 100%;
+	height: 8%;
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+}
+.page-down {
+	bottom: -8%;
+}
+.page-up {
+	top: -8%;
+	transform: rotate(180deg);
+}
+.down-button.svg {
+	height: 12rem;
+	width: 12rem;
+}
+
+.down-button.svg path {
+	fill: $text-light-color;
+}
+
 

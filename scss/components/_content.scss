@@ -11,10 +11,10 @@
 	justify-content: space-around;
 	height: 50%;
 	padding: 2em;
-	margin-top: 5em;
+	margin-top: 10em;
 
 	border-radius: $b-radius;
-	background-color: $background-light-color;
+	background-color: white;
 	color: $text-dark-color;
 }
 
@@ -26,6 +26,7 @@
 	> p {
 		visibility: hidden;
 	}
+	margin-top: 10em;
 }
 #section2,
 #section3,
