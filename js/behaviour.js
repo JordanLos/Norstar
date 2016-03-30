@@ -9,8 +9,10 @@
 $( document ).ready(function() {	
 
 /******* COMMON ATTRIBUTES *******/
-	var a1 = { autoAlpha:1 };
-	var a0 = { autoAlpha:0 };
+	var a1 = { autoAlpha:1 },
+		a0 = { autoAlpha:0 },
+		ds = { autoAlpha:1, display:'block' };
+		hd = { autoAlpha:0, display:'none' };
 
 /******* ONLOAD FUNCTIONS *******/
 	window.onload = function() {
@@ -48,7 +50,11 @@ $( document ).ready(function() {
 		
 
 /********* OPENING SCENE **********/
-	var skewX = new Object();
+	var skewX = new Object(),
+		header = new Object(),
+		section1 = new Object(),
+		actionButton = new Object();
+
 	skewX.unskewed = {
 		transform: 'skewY(0deg)',
 		ease:Power1.easeInOut,
@@ -62,58 +68,47 @@ $( document ).ready(function() {
 		ease:Power1.easeInOut
 	};
 
-	var tl = new TimelineLite();
-	function moveToContent() {
+	header.transitioning = {
+		delay: 0.2,
+		transform:"translateY(0%)",
+		top:'12%' 
+	};	
+	header.positioned = { //TODO: BAD NAME! doesn't describe how its fuctioning
+		width:'82.94039%', // Copied from bourbon grid width of 10/12
+		marginLeft:'8.5298%',
+	};
+	section1.positioned = {
+		height:'50%',
+		padding:'2em',
+		width:'82.94039%' // Copied from bourbon grid width of 10/12
+	};
+
+	actionButton.positioned = {
+		padding:'2rem',
+		height:'9rem',
+		width:'9rem',
+	};
+	actionButton.image = {
+		background:'url(../img/phone.svg) center / 62% no-repeat #ECA400' //red accent
+	};
+
+	function moveToContent(tl) {
 		// A. Unskew and move the colored div
 		tl.to('#skewX', 0.3, skewX.unskewed)
 		.to('#skewX', 0.4, skewX.backgrounded, "open")	
 		// B. Move the header from center page to the top of the page and remove the company slogan
-		.to('.header', 0.5, {
-			delay: 0.2,
-			transform:"translateY(0%)",
-			top:'12%' 
-		},"open" )
-		.to('#slogan', 0.5, { 
-			delay: 0.2,
-			display:'none', 
-			autoAlpha:0
-		}, "open")
-
-		
+		.to('.header', 0.5, header.transitioning, "open" )
+		.to('#slogan', 0.5, hd, "open -=0.2 " )
 		// C. Expand the header to take up the entire width of the screen and add the carousel text
-		.to(['#carousel1', '.carousel-header'], 0.5, {
-			autoAlpha:1, 
-			display:'block' 
-		}, "enterContent")
-		.to('.header', 0.5, { 
-			width:'82.94039%', // Copied from bourbon grid width of 10/12
-			marginLeft:'8.5298%',
-		}, "enterContent" )
-
-		.from('#section1', 0.4, {
-			margin:'50%'
-		}, "enterContent")
-		.to('#section1', 0.4, {
-			height:'50%',
-			padding:'2em',
-			width:'82.94039%' // Copied from bourbon grid width of 10/12
-		}, "enterContent")
-		.to('#section1 > p', 0.4, {
-			autoAlpha:1
-		}, "enterContent")
+		.to(['#carousel1', '.carousel-header'], 0.5, ds, "enterContent")
+		.to('.header', 0.5, header.positioned, "enterContent" )
+		.from('#section1', 0.4, { marginLeft:'50%' }, "enterContent")
+		.to('#section1', 0.4, section1.positioned, "enterContent")
+		.to('#section1 > p', 0.4, a1, "enterContent")
 		// E. Bring the action buttion into view
-		.to('.action-button_floating', 0.3, { 
-			padding:'2rem',
-			height:'9rem',
-			width:'9rem',
-		}, "enterContent")
-		.to('.action-button_floating', 0.2, { 
-			background:'url(../img/phone.svg) center / 62% no-repeat #ECA400' //red accent
-		})
-		.to('.page-up', 0.3, {
-			top:'0%'
-		}, "enterContent")
-	}
+		.to('.action-button_floating', 0.3, actionButton.positioned, "enterContent")
+		.to('.action-button_floating', 0.2, actionButton.image)
+		.to('.page-up', 0.3, { top:'0%' }, "enterContent")}
 
 	var tl1 = new TimelineLite(); // For moving carousel headers
 	// Fade out & remove active carousel item; add & fade in next carousel item
@@ -158,15 +153,16 @@ $( document ).ready(function() {
 			var contentActive = '#section' + (index - 1).toString();
 			var contentNext = '#section' + index.toString();
 			var contentPrevious = '#section' + (index - 2).toString();
+			var openingScene = new TimelineLite();
 			if (index == 1 ) {
 				// The timeline requires a different function call if it has been reversed
-				if (tl.reversed()) {
-					tl.play();
+				if (openingScene.reversed()) {
+					openingScene.play();
 				} else {
-					moveToContent();
+					moveToContent(openingScene);
 				}
 			} else if (index == 2 && direction == 'up') { 
-				tl.reverse();	
+				openingScene.reverse();	
 			} else if (index == (lastPage) && direction == 'up') {
                 TweenMax.to('.page-down', 0.15, {
 					bottom:'0%'
