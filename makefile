@@ -4,5 +4,5 @@ watch-sass:
 render-jade:
 	jade -o ./ --watch jade/index.jade
 start-browser-sync:
-	browser-sync start --server --files "css/main.css, index.html"
+	browser-sync start --server --files "js/behaviour.js, css/main.css, index.html"
 

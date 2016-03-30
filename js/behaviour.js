@@ -151,6 +151,8 @@ window.onload = function() {
 		e.preventDefault();
 		$.fn.fullpage.moveSectionDown();
 	})
+	var lastPage = $('#fullpage .section').length;
+
 	$('#fullpage').fullpage({
 		scrollingSpeed: 1000,
 		easingcss3: 'cubic-bezier(0.55 ,0.0 ,0.1 ,1.0)',
@@ -175,27 +177,37 @@ window.onload = function() {
 				}
 			} else if (index == 2 && direction == 'up') { 
 				tl.reverse();	
-			} else if (direction == 'down') {
-				moveCarousel(headerActive, headerNext);
-				moveContent(contentActive, contentNext);
-			} else if (index > 2 && direction == 'up') {
-				moveCarousel(headerActive, headerPrevious); 
-				moveContent(contentActive, contentPrevious);
-				console.log(index.length);
-			};
-		},
-		'afterLoad': function(anchorLink, index){
-            // Section indexes in fullpage start at 1
-            if(index === $('#fullpage .section').length){
-                TweenMax.to('.page-down', 0.15, {
-					bottom:'-8%'
-				})
-            } else if(index === $('#fullpage .section').length -1){
+			} else if (index == (lastPage) && direction == 'up') {
                 TweenMax.to('.page-down', 0.15, {
 					bottom:'0%'
 				})
-            }
-        }
+				moveCarousel(headerActive, headerPrevious); 
+				moveContent(contentActive, contentPrevious);
+				TweenMax.to('.action-button_floating', 0.3, {
+					right:'2em',
+					height:'9rem',
+					width:'9rem'
+				})
+			} else if (index > 2 && direction == 'up') {
+				moveCarousel(headerActive, headerPrevious); 
+				moveContent(contentActive, contentPrevious);
+			} else if (index == (lastPage - 1) && direction == 'down') { //lastPage - 1 because leaving the penultimate page triggers the change
+                TweenMax.to('.page-down', 0.15, {
+					bottom:'-8%'
+				})
+				moveCarousel(headerActive, headerNext);
+				moveContent(contentActive, contentNext);
+				TweenMax.to('.action-button_floating', 0.3, {
+					right:'14em',
+					height:'15rem',
+					width:'15rem'
+
+				})
+			} else if (direction == 'down') {
+				moveCarousel(headerActive, headerNext);
+				moveContent(contentActive, contentNext);
+			};	
+		}
 	});
 
 });
