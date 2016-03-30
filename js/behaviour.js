@@ -11,7 +11,7 @@ $( document ).ready(function() {
 /******* COMMON ATTRIBUTES *******/
 	var a1 = { autoAlpha:1 },
 		a0 = { autoAlpha:0 },
-		ds = { autoAlpha:1, display:'block' };
+		dsp = { autoAlpha:1, display:'block' };
 		hd = { autoAlpha:0, display:'none' };
 
 /******* ONLOAD FUNCTIONS *******/
@@ -91,6 +91,16 @@ $( document ).ready(function() {
 	actionButton.image = {
 		background:'url(../img/phone.svg) center / 62% no-repeat #ECA400' //red accent
 	};
+	actionButton.init = { // Used in FULLPAGE section TODO: MAKE CSS object section
+		right:'2em',
+		height:'9rem',
+		width:'9rem'
+	};
+	actionButton.center = {
+		right:'14em',
+		height:'15rem',
+		width:'15rem'
+	};
 
 	function moveToContent(tl) {
 		// A. Unskew and move the colored div
@@ -100,7 +110,7 @@ $( document ).ready(function() {
 		.to('.header', 0.5, header.transitioning, "open" )
 		.to('#slogan', 0.5, hd, "open -=0.2 " )
 		// C. Expand the header to take up the entire width of the screen and add the carousel text
-		.to(['#carousel1', '.carousel-header'], 0.5, ds, "enterContent")
+		.to(['#carousel1', '.carousel-header'], 0.5, dsp, "enterContent")
 		.to('.header', 0.5, header.positioned, "enterContent" )
 		.from('#section1', 0.4, { marginLeft:'50%' }, "enterContent")
 		.to('#section1', 0.4, section1.positioned, "enterContent")
@@ -110,24 +120,10 @@ $( document ).ready(function() {
 		.to('.action-button_floating', 0.2, actionButton.image)
 		.to('.page-up', 0.3, { top:'0%' }, "enterContent")}
 
-	var tl1 = new TimelineLite(); // For moving carousel headers
-	// Fade out & remove active carousel item; add & fade in next carousel item
-	function moveCarousel(activeItem, nextItem) {
-		tl1.to(activeItem, 0.3, { autoAlpha:0, display:'none' })
-		.to(nextItem, 0.3, { display:'block', autoAlpha:1 })
-	};
-	var tl2 = new TimelineLite(); // For Moving Sections
-	function moveContent(activeItem, nextItem) {
-		tl2.to(activeItem, 0.15, { 
-			autoAlpha:0 
-		})
-		.to(nextItem, 0.15, { 
-			autoAlpha:1 
-		}, "+=0.35")
-	};
 
 	
-/********** FULLPAGE *********/	
+/********** FULLPAGE FUNCTIONS *********/	
+	
 	$('.page-up').click(function(e){
 		e.preventDefault();
 		$.fn.fullpage.moveSectionUp();
@@ -136,8 +132,22 @@ $( document ).ready(function() {
 		e.preventDefault();
 		$.fn.fullpage.moveSectionDown();
 	})
-	var lastPage = $('#fullpage .section').length;
 
+
+	var carouselHeaders = new TimelineLite(), // For moving carousel headers
+		sections = new TimelineLite(), // For Moving Sections
+		lastPage = $('#fullpage .section').length;
+		
+	function moveCarousel(tl, activeItem, nextItem) {
+		tl.to(activeItem, 0.3, hd)
+		.to(nextItem, 0.3, dsp)
+	};
+	function moveContent(tl, activeItem, nextItem) {
+		tl.to(activeItem, 0.15, a0)
+		.to(nextItem, 0.15, a1, "+=0.35")
+	};
+
+/********** FULLPAGE OPERATION *********/	
 	$('#fullpage').fullpage({
 		scrollingSpeed: 1000,
 		easingcss3: 'cubic-bezier(0.55 ,0.0 ,0.1 ,1.0)',
@@ -158,41 +168,32 @@ $( document ).ready(function() {
 				// The timeline requires a different function call if it has been reversed
 				if (openingScene.reversed()) {
 					openingScene.play();
+					console.log(1)
 				} else {
 					moveToContent(openingScene);
+					console.log(2)
 				}
 			} else if (index == 2 && direction == 'up') { 
 				openingScene.reverse();	
+					console.log(3)
 			} else if (index == (lastPage) && direction == 'up') {
-                TweenMax.to('.page-down', 0.15, {
-					bottom:'0%'
-				})
-				var actionButtonInit = {
-					right:'2em',
-					height:'9rem',
-					width:'9rem'
-				};
-				moveCarousel(headerActive, headerPrevious); 
-				moveContent(contentActive, contentPrevious);
-				TweenMax.to('.action-button_floating', 0.3, actionButtonInit)
+                TweenMax.to('.page-down', 0.15, { bottom:'0%' })
+				moveCarousel(carouselHeaders, headerActive, headerPrevious); 
+				moveContent(sections, contentActive, contentPrevious);
+				TweenMax.to('.action-button_floating', 0.3, actionButton.init)
 			} else if (index > 2 && direction == 'up') {
-				moveCarousel(headerActive, headerPrevious); 
-				moveContent(contentActive, contentPrevious);
+				moveCarousel(carouselHeaders, headerActive, headerPrevious); 
+				moveContent(sections, contentActive, contentPrevious);
 			} else if (index == (lastPage - 1) && direction == 'down') { //lastPage - 1 because leaving the penultimate page triggers the change
                 TweenMax.to('.page-down', 0.15, {
 					bottom:'-8%'
 				})
-				moveCarousel(headerActive, headerNext);
-				moveContent(contentActive, contentNext);
-				TweenMax.to('.action-button_floating', 0.3, {
-					right:'14em',
-					height:'15rem',
-					width:'15rem'
-
-				})
+				moveCarousel(carouselHeaders, headerActive, headerNext);
+				moveContent(sections, contentActive, contentNext);
+				TweenMax.to('.action-button_floating', 0.3, actionButton.center)
 			} else if (direction == 'down') {
-				moveCarousel(headerActive, headerNext);
-				moveContent(contentActive, contentNext);
+				moveCarousel(carouselHeaders, headerActive, headerNext);
+				moveContent(sections, contentActive, contentNext);
 			};	
 		}
 	});
