@@ -1,82 +1,72 @@
+/* README: 
+*
+* tl are used internally for all functions 
+* Section: full window height section of document used by fullpage.js
+* Carousel: Component that, upon scrolling, brings one element to replace another in the same position
+*
+****************/
+
 $( document ).ready(function() {	
-	/**** TERMS *****
-	* Section: full window height section of document used by fullpage.js
-	* Carousel: Component that, upon scrolling, brings one element to replace another in the same position
-	****************/
 
+/******* COMMON ATTRIBUTES *******/
+	var a1 = { autoAlpha:1 };
+	var a0 = { autoAlpha:0 };
 
-window.onload = function() {
-	TweenMax.to('.page-down', 0.5, {
-		delay: 0.6,
-		bottom:'0%'
-	});
-};
-
-/******* CONTACT BUTTON *********/
-	var tlContact = new TimelineLite();
-	function centerExpand() {
-		TweenMax.to('.contact', 0.05, {
-			autoAlpha:1,
-		})
-		TweenMax.to('.contact', 0.2, {
-			top:'10%',
-			height:'50%',
-			//width:'82.94039%',
-			//marginLeft:'8.5298%'
-			width:'100%',
-			marginLeft:'0%'
-		})
-		TweenMax.to('.media', 0.2, {
-			delay:0.2,
-			autoAlpha:1
-		});
-	}
-	function actionCollapse() {
-		TweenMax.to('.media', 0.3, {
-			autoAlpha:0
-		});
-		TweenMax.to('.contact', 0.3, {
-			delay:0.15,
-			top:'25%',
-			height:'0%',
-			width:'0%',
-			marginLeft:'50%'
-		});
-		TweenMax.to('.contact', 0.05, {
-			delay:0.35,
-			autoAlpha:0
+/******* ONLOAD FUNCTIONS *******/
+	window.onload = function() {
+		TweenMax.to('.page-down', 0.5, {
+			delay: 0.6,
+			bottom:'0%'
 		});
 	};
 
-	var actionClick = 0;
+/******* CONTACT BUTTON *********/
+	var clickCounter = 0,
+		buttonClick = new TimelineLite(),
+		contact = {
+			top:'10%',
+			height:'50%',
+			width:'100%',
+			marginLeft:'0%'
+		};
+
+	function openDiv(tl) {
+		tl.to('.contact', 0.05, a1)
+		.to('.contact', 0.2, contact) 
+		.to('.media', 0.2, a1)
+	};
+
 	$('.action-button_floating').click( function() {
-		if (actionClick == 0) {
-			centerExpand();
-			actionClick = 1;
-		} else if (actionClick == 1) {
-			actionCollapse();
-			actionClick = 0;
-		}
+		openDiv(buttonClick);
+		if (clickCounter % 2 == 1) {
+			buttonClick.reverse();
+		} else {
+			buttonClick.play();
+		};
+		clickCounter++;
 	});
 		
 
 /********* OPENING SCENE **********/
+	var skewX = new Object();
+	skewX.unskewed = {
+		transform: 'skewY(0deg)',
+		ease:Power1.easeInOut,
+	};
+	skewX.backgrounded = {
+		height:'84%',
+		width:'100%',
+		left:'0%',
+		top:'8%',
+		backgroundColor:'#8bc0b3',
+		ease:Power1.easeInOut
+	};
+
 	var tl = new TimelineLite();
 	function moveToContent() {
 		// A. Unskew and move the colored div
-		tl.to('#skewX', 0.3, {
-			transform: 'skewY(0deg)',
-			ease:Power1.easeInOut,
-		})
-		.to('#skewX', 0.4, {
-			delay: 0.2,
-			height:'84%',
-			width:'100%',
-			left:'0%',
-			top:'8%',
-			backgroundColor:'#8bc0b3',
-			ease:Power1.easeInOut
-		}, "open")	
+		tl.to('#skewX', 0.3, skewX.unskewed)
+		.to('#skewX', 0.4, skewX.backgrounded, "open")	
 		// B. Move the header from center page to the top of the page and remove the company slogan
 		.to('.header', 0.5, {
 			delay: 0.2,
@@ -181,13 +171,14 @@ window.onload = function() {
                 TweenMax.to('.page-down', 0.15, {
 					bottom:'0%'
 				})
-				moveCarousel(headerActive, headerPrevious); 
-				moveContent(contentActive, contentPrevious);
-				TweenMax.to('.action-button_floating', 0.3, {
+				var actionButtonInit = {
 					right:'2em',
 					height:'9rem',
 					width:'9rem'
-				})
+				};
+				moveCarousel(headerActive, headerPrevious); 
+				moveContent(contentActive, contentPrevious);
+				TweenMax.to('.action-button_floating', 0.3, actionButtonInit)
 			} else if (index > 2 && direction == 'up') {
 				moveCarousel(headerActive, headerPrevious); 
 				moveContent(contentActive, contentPrevious);
