@@ -60,11 +60,12 @@ $( document ).ready(function() {
 		ease:Power1.easeInOut,
 	};
 	skewX.backgrounded = {
+		//autoAlpha:0.8,
 		height:'84%',
 		width:'100%',
 		left:'0%',
 		top:'8%',
-		backgroundColor:'#8bc0b3',
+		//backgroundColor:'#8bc0b3',
 		ease:Power1.easeInOut
 	};
 
@@ -77,6 +78,7 @@ $( document ).ready(function() {
 		width:'82.94039%', // Copied from bourbon grid width of 10/12
 		marginLeft:'8.5298%',
 	};
+
 	section1.positioned = {
 		height:'50%',
 		padding:'2em',
@@ -104,10 +106,10 @@ $( document ).ready(function() {
 
 	function moveToContent(tl) {
 		// A. Unskew and move the colored div
-		tl.to('#skewX', 0.3, skewX.unskewed)
-		.to('#skewX', 0.4, skewX.backgrounded, "open")	
+		//tl.to('#skewX', 0.3, skewX.unskewed)
+		//.to('#skewX', 0.2, skewX.backgrounded, "open")	
 		// B. Move the header from center page to the top of the page and remove the company slogan
-		.to('.header', 0.5, header.transitioning, "open" )
+		tl.to('.header', 0.5, header.transitioning, "open" )
 		.to('#slogan', 0.5, hd, "open -=0.2 " )
 		// C. Expand the header to take up the entire width of the screen and add the carousel text
 		.to(['#carousel1', '.carousel-header'], 0.5, dsp, "enterContent")
@@ -134,19 +136,9 @@ $( document ).ready(function() {
 	})
 
 
-	var carouselHeaders = new TimelineLite(), // For moving carousel headers
-		sections = new TimelineLite(), // For Moving Sections
-		lastPage = $('#fullpage .section').length;
-		
-	function moveCarousel(tl, activeItem, nextItem) {
-		tl.to(activeItem, 0.3, hd)
-		.to(nextItem, 0.3, dsp)
-	};
-	function moveContent(tl, activeItem, nextItem) {
-		tl.to(activeItem, 0.15, a0)
-		.to(nextItem, 0.15, a1, "+=0.35")
-	};
 
+	var openingScene	= new TimelineLite({paused:true} );
+	var openingTl = moveToContent(openingScene);
 /********** FULLPAGE OPERATION *********/	
 	$('#fullpage').fullpage({
 		scrollingSpeed: 1000,
@@ -156,26 +148,30 @@ $( document ).ready(function() {
 		
 		'onLeave': function(index, nextIndex, direction) {
 			// Identify carousel items in relation to the current section
-			var headerActive = '#carousel' + (index - 1).toString();
-			var headerNext = '#carousel' + index.toString();
-			var headerPrevious = '#carousel' + (index - 2).toString();
+			var headerActive	= '#carousel' + (index - 1).toString(),
+				headerNext		= '#carousel' + index.toString(),
+				headerPrevious	= '#carousel' + (index - 2).toString(),
+				contentActive	= '#section' + (index - 1).toString(),
+				contentNext		= '#section' + index.toString(),
+				contentPrevious	= '#section' + (index - 2).toString();
 
-			var contentActive = '#section' + (index - 1).toString();
-			var contentNext = '#section' + index.toString();
-			var contentPrevious = '#section' + (index - 2).toString();
-			var openingScene = new TimelineLite();
+			var carouselHeaders = new TimelineLite(), // For moving carousel headers
+				sections = new TimelineLite(), // For Moving Sections
+				lastPage = $('#fullpage .section').length;
+				
+			function moveCarousel(tl, activeItem, nextItem) {
+				tl.to(activeItem, 0.3, hd)
+				.to(nextItem, 0.3, dsp)
+			};
+			function moveContent(tl, activeItem, nextItem) {
+				tl.to(activeItem, 0.15, a0)
+				.to(nextItem, 0.15, a1, "+=0.35")
+			};
+
 			if (index == 1 ) {
-				// The timeline requires a different function call if it has been reversed
-				if (openingScene.reversed()) {
-					openingScene.play();
-					console.log(1)
-				} else {
-					moveToContent(openingScene);
-					console.log(2)
-				}
+				openingScene.play();
 			} else if (index == 2 && direction == 'up') { 
-				openingScene.reverse();	
-					console.log(3)
+				openingScene.reverse();
 			} else if (index == (lastPage) && direction == 'up') {
                 TweenMax.to('.page-down', 0.15, { bottom:'0%' })
 				moveCarousel(carouselHeaders, headerActive, headerPrevious); 
