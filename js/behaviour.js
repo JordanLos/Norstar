@@ -50,24 +50,9 @@ $( document ).ready(function() {
 		
 
 /********* OPENING SCENE **********/
-	var skewX = new Object(),
-		header = new Object(),
+	var header = new Object(),
 		section1 = new Object(),
 		actionButton = new Object();
-
-	skewX.unskewed = {
-		transform: 'skewY(0deg)',
-		ease:Power1.easeInOut,
-	};
-	skewX.backgrounded = {
-		//autoAlpha:0.8,
-		height:'84%',
-		width:'100%',
-		left:'0%',
-		top:'8%',
-		//backgroundColor:'#8bc0b3',
-		ease:Power1.easeInOut
-	};
 
 	header.transitioning = {
 		delay: 0.2,
@@ -105,17 +90,14 @@ $( document ).ready(function() {
 	};
 
 	function moveToContent(tl) {
-		// A. Unskew and move the colored div
-		//tl.to('#skewX', 0.3, skewX.unskewed)
-		//.to('#skewX', 0.2, skewX.backgrounded, "open")	
-		// B. Move the header from center page to the top of the page and remove the company slogan
+		// 1. Move the header from center page to the top of the page and remove the company slogan
 		tl.to('.header', 0.5, header.transitioning, "open" )
 		.to('#slogan', 0.5, hd, "open -=0.2 " )
-		// C. Expand the header to take up the entire width of the screen and add the carousel text
+		// 2. Expand the header to take up the entire width of the screen and add the carousel text
 		.to(['#carousel1', '.carousel-header'], 0.5, dsp, "enterContent")
 		.to('.header', 0.5, header.positioned, "enterContent" )
 		.to('#section1', 0.4, { autoAlpha:1, top:'17%' }, "enterContent")
-		// E. Bring the action buttion into view
+		// 3. Bring the action buttion into view
 		.to('.action-button_floating', 0.3, actionButton.positioned, "enterContent")
 		.to('.action-button_floating', 0.2, actionButton.image)
 		.to('.page-up', 0.3, { top:'0%' }, "enterContent")}
