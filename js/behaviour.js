@@ -147,49 +147,57 @@ $( document ).ready(function() {
 		fixedElements: '.action-button_floating',
 		
 		'onLeave': function(index, nextIndex, direction) {
-			// Identify carousel items in relation to the current section
-			var headerActive	= '#carousel' + (index - 1).toString(),
-				headerNext		= '#carousel' + index.toString(),
-				headerPrevious	= '#carousel' + (index - 2).toString(),
-				contentActive	= '#section' + (index - 1).toString(),
-				contentNext		= '#section' + index.toString(),
-				contentPrevious	= '#section' + (index - 2).toString();
 
-			var carouselHeaders = new TimelineLite(), // For moving carousel headers
+			var carouselTl = new TimelineLite(), // For moving carousel headers
 				sections = new TimelineLite(), // For Moving Sections
 				lastPage = $('#fullpage .section').length;
-				
-			function moveCarousel(tl, activeItem, nextItem) {
-				tl.to(activeItem, 0.3, hd)
-				.to(nextItem, 0.3, dsp)
-			};
-			function moveContent(tl, activeItem, nextItem) {
-				tl.to(activeItem, 0.15, a0)
-				.to(nextItem, 0.15, a1, "+=0.35")
-			};
 
+			var headerActive	= '#carousel' + (index - 1).toString(),
+				contentActive	= '#section' + (index - 1).toString();
+			if (direction == 'up') {
+				headerNext = '#carousel' + (index - 2).toString();
+				contentNext = '#section' + (index - 2).toString();
+			} else if (direction == 'down') {
+				headerNext = '#carousel' + (index).toString();
+				contentNext = '#section' + (index).toString();
+			}
+
+
+				
+			// Hide content/header combo
+			function hideCombo(tl, header, content){
+				tl.to(header, 0.3, hd, "hd")
+				.to(content, 0.3, {autoAlpha:0, top:'37%'}, "hd")
+			}
+			// Display content/header Combo
+			function displayCombo(tl, header, content){
+				tl.to(header, 0.3, dsp, "dsp")
+				.to(content, 0.3, {autoAlpha:1, top:'17%'}, "dsp")
+			}
+			// Move Carousel
+			function moveCarousel(tl) {
+				hideCombo(tl, headerActive, contentActive);
+				displayCombo(tl, headerNext, contentNext);
+			}
+			
+			// Play Opening Animation or Move Carousel
 			if (index == 1 ) {
 				openingScene.play();
 			} else if (index == 2 && direction == 'up') { 
 				openingScene.reverse();
-			} else if (index == (lastPage) && direction == 'up') {
+			} else {
+				moveCarousel(carouselTl)
+			};
+				
+			// Last Page:
+			// 1. Hide page-down icon to indicate end of document
+			// 2. Move action-button as a call to action on last page
+			if (index == (lastPage) && direction == 'up') {
                 TweenMax.to('.page-down', 0.15, { bottom:'0%' })
-				moveCarousel(carouselHeaders, headerActive, headerPrevious); 
-				moveContent(sections, contentActive, contentPrevious);
 				TweenMax.to('.action-button_floating', 0.3, actionButton.init)
-			} else if (index > 2 && direction == 'up') {
-				moveCarousel(carouselHeaders, headerActive, headerPrevious); 
-				moveContent(sections, contentActive, contentPrevious);
-			} else if (index == (lastPage - 1) && direction == 'down') { //lastPage - 1 because leaving the penultimate page triggers the change
-                TweenMax.to('.page-down', 0.15, {
-					bottom:'-8%'
-				})
-				moveCarousel(carouselHeaders, headerActive, headerNext);
-				moveContent(sections, contentActive, contentNext);
+			} else if (index == (lastPage - 1) && direction == 'down') { 
+                TweenMax.to('.page-down', 0.15, { bottom:'-8%' })
 				TweenMax.to('.action-button_floating', 0.3, actionButton.center)
-			} else if (direction == 'down') {
-				moveCarousel(carouselHeaders, headerActive, headerNext);
-				moveContent(sections, contentActive, contentNext);
 			};	
 		}
 	});
