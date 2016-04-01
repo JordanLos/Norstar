@@ -175,20 +175,19 @@ $text-light-color {}
   height: 50%;
   padding: 2em;
   margin-top: 10em;
+  position: fixed;
+  top: 37%;
   border-radius: 5px;
   background-color: white;
   color: #178166; }
   .content:last-child {
     margin-right: 0; }
 
-#section1 {
-  height: 0%;
-  width: 0%;
-  padding: 0em;
-  overflow: hidden;
-  margin-top: 10em; }
-  #section1 > p {
-    visibility: hidden; }
+#section1,
+#section2,
+#section3,
+#section4 {
+  visibility: hidden; }
 
 body {
   background: linear-gradient(rgba(23, 129, 102, 0.1), rgba(23, 129, 102, 0.1)), url(../img/dirt.jpeg); }

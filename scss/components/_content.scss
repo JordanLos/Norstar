@@ -13,26 +13,19 @@
 	padding: 2em;
 	margin-top: 10em;
 
+	position: fixed;
+	top: 37%;
+
 	border-radius: $b-radius;
 	background-color: white;
 	color: $text-dark-color;
 }
 
-#section1 {
-	height: 0%;
-	width: 0%;
-	padding: 0em;
-	overflow: hidden;
-	> p {
-		visibility: hidden;
-	}
-	margin-top: 10em;
-}
+#section1,
 #section2,
 #section3,
-#section4,
-#section5 {
-	//visibility: hidden; // To be altered by Javascript
+#section4 {
+	visibility: hidden; // To be altered by Javascript
 }
 
 body {

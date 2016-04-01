@@ -114,9 +114,7 @@ $( document ).ready(function() {
 		// C. Expand the header to take up the entire width of the screen and add the carousel text
 		.to(['#carousel1', '.carousel-header'], 0.5, dsp, "enterContent")
 		.to('.header', 0.5, header.positioned, "enterContent" )
-		.from('#section1', 0.4, { marginLeft:'50%' }, "enterContent")
-		.to('#section1', 0.4, section1.positioned, "enterContent")
-		.to('#section1 > p', 0.4, a1, "enterContent")
+		.to('#section1', 0.4, { autoAlpha:1, top:'17%' }, "enterContent")
 		// E. Bring the action buttion into view
 		.to('.action-button_floating', 0.3, actionButton.positioned, "enterContent")
 		.to('.action-button_floating', 0.2, actionButton.image)
