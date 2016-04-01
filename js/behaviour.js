@@ -134,10 +134,10 @@ $( document ).ready(function() {
 	})
 
 
-
+/********** FULLPAGE OPERATION *********/	
 	var openingScene	= new TimelineLite({paused:true} );
 	var openingTl = moveToContent(openingScene);
-/********** FULLPAGE OPERATION *********/	
+
 	$('#fullpage').fullpage({
 		scrollingSpeed: 1000,
 		easingcss3: 'cubic-bezier(0.55 ,0.0 ,0.1 ,1.0)',
@@ -145,22 +145,17 @@ $( document ).ready(function() {
 		fixedElements: '.action-button_floating',
 		
 		'onLeave': function(index, nextIndex, direction) {
-
-			var carouselTl = new TimelineLite(), // For moving carousel headers
-				sections = new TimelineLite(), // For Moving Sections
-				lastPage = $('#fullpage .section').length;
-
-			var headerActive	= '#carousel' + (index - 1).toString(),
+			var carouselTl = new TimelineLite(),
+				headerActive	= '#carousel' + (index - 1).toString(),
 				contentActive	= '#section' + (index - 1).toString();
+			// Select content/header combo based on scroll direction
 			if (direction == 'up') {
-				headerNext = '#carousel' + (index - 2).toString();
-				contentNext = '#section' + (index - 2).toString();
+				var headerNext = '#carousel' + (index - 2).toString();
+				var contentNext = '#section' + (index - 2).toString();
 			} else if (direction == 'down') {
-				headerNext = '#carousel' + (index).toString();
-				contentNext = '#section' + (index).toString();
+				var headerNext = '#carousel' + (index).toString();
+				var contentNext = '#section' + (index).toString();
 			}
-
-
 				
 			// Hide content/header combo
 			function hideCombo(tl, header, content){
@@ -190,6 +185,7 @@ $( document ).ready(function() {
 			// Last Page:
 			// 1. Hide page-down icon to indicate end of document
 			// 2. Move action-button as a call to action on last page
+			var lastPage = $('#fullpage .section').length;
 			if (index == (lastPage) && direction == 'up') {
                 TweenMax.to('.page-down', 0.15, { bottom:'0%' })
 				TweenMax.to('.action-button_floating', 0.3, actionButton.init)
