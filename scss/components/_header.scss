@@ -1,6 +1,6 @@
 .header {
-	@include span-columns(8);
-	@include shift(2);
+	@include span-columns(10);
+	@include shift(1);
 	@include pad(1em);
 	background-color: white;
 	@include vertical-align;
@@ -8,14 +8,16 @@
 	position: relative;
 	z-index: 2;
 	@include elevation-2;
+	height: 17em;
 	
-	border-radius: $b-radius;
+	border-radius: 10px;
 }
+
 
 #logo {
 	display: inline-block;
 	z-index: 10;
-	max-height: 5em;
+	max-height: 7em;
 	// TODO: make hieght multiople of line-height
 
 }
@@ -31,17 +33,29 @@
 .page-down {
 	bottom: -8%;
 }
-.page-up {
+.up-button {
 	top: -8%;
 	transform: rotate(180deg);
 }
 .down-button.svg {
-	height: 12rem;
-	width: 12rem;
+	bottom: 0%;
+	height: 5em;
+	width: 5em;
 }
 
 .down-button.svg path {
 	fill: $text-light-color;
+}
+
+@media (min-width: 450px) {
+	.header {
+		height: 20em;
+		font-size: 8px;
+	}
+	h1 {
+		font-size: 24px;
+	}
+
 }
 
 

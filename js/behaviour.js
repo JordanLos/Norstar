@@ -57,7 +57,7 @@ $( document ).ready(function() {
 	header.transitioning = {
 		delay: 0.2,
 		transform:"translateY(0%)",
-		top:'12%' 
+		top:'8%' 
 	};	
 	header.positioned = { //TODO: BAD NAME! doesn't describe how its fuctioning
 		width:'82.94039%', // Copied from bourbon grid width of 10/12
@@ -71,22 +71,18 @@ $( document ).ready(function() {
 	};
 
 	actionButton.positioned = {
+		right:'15%',
 		padding:'2rem',
-		height:'9rem',
-		width:'9rem',
+		height:'6rem',
+		width:'6rem',
 	};
 	actionButton.image = {
-		background:'url(../img/phone.svg) center / 62% no-repeat #ECA400' //red accent
-	};
-	actionButton.init = { // Used in FULLPAGE section TODO: MAKE CSS object section
-		right:'2em',
-		height:'9rem',
-		width:'9rem'
+		background:'url(../img/phone.svg) center / 50% no-repeat #ECA400' //red accent
 	};
 	actionButton.center = {
-		right:'14em',
-		height:'15rem',
-		width:'15rem'
+		right:'50%',
+		height:'10em',
+		width:'10em'
 	};
 
 	function moveToContent(tl) {
@@ -96,7 +92,7 @@ $( document ).ready(function() {
 		// 2. Expand the header to take up the entire width of the screen and add the carousel text
 		.to(['#carousel1', '.carousel-header'], 0.5, dsp, "enterContent")
 		.to('.header', 0.5, header.positioned, "enterContent" )
-		.to('#section1', 0.4, { autoAlpha:1, top:'17%' }, "enterContent")
+		.to('#section1', 0.4, { autoAlpha:1, top:'calc(19em + 8%)' }, "enterContent")
 		// 3. Bring the action buttion into view
 		.to('.action-button_floating', 0.3, actionButton.positioned, "enterContent")
 		.to('.action-button_floating', 0.2, actionButton.image)
@@ -106,6 +102,8 @@ $( document ).ready(function() {
 	
 /********** FULLPAGE FUNCTIONS *********/	
 	
+	// Set Calc value for use on Hide/Display Combo Function
+	TweenMax.set('.content', { top:'calc(25em + 8%)' })
 	$('.page-up').click(function(e){
 		e.preventDefault();
 		$.fn.fullpage.moveSectionUp();
@@ -142,12 +140,12 @@ $( document ).ready(function() {
 			// Hide content/header combo
 			function hideCombo(tl, header, content){
 				tl.to(header, 0.3, hd, "hd")
-				.to(content, 0.3, {autoAlpha:0, top:'37%'}, "hd")
+				.to(content, 0.3, {autoAlpha:0, top:'calc(25em + 8%)'}, "hd")
 			}
 			// Display content/header Combo
 			function displayCombo(tl, header, content){
 				tl.to(header, 0.3, dsp, "dsp")
-				.to(content, 0.3, {autoAlpha:1, top:'17%'}, "dsp")
+				.to(content, 0.3, {autoAlpha:1, top:'calc(19em + 8%'}, "dsp")
 			}
 			// Move Carousel
 			function moveCarousel(tl) {
@@ -170,7 +168,7 @@ $( document ).ready(function() {
 			var lastPage = $('#fullpage .section').length;
 			if (index == (lastPage) && direction == 'up') {
                 TweenMax.to('.page-down', 0.15, { bottom:'0%' })
-				TweenMax.to('.action-button_floating', 0.3, actionButton.init)
+				TweenMax.to('.action-button_floating', 0.3, actionButton.positioned)
 			} else if (index == (lastPage - 1) && direction == 'down') { 
                 TweenMax.to('.page-down', 0.15, { bottom:'-8%' })
 				TweenMax.to('.action-button_floating', 0.3, actionButton.center)

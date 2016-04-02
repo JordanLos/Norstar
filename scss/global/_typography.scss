@@ -2,36 +2,44 @@
 
 // html font size at 10 to keep rems to 10
 html {
-	font-size: 10px;
+	font-size: 10px
 }
-
-@mixin font-size($sizeValue: 1.6) {
-	font-size: ($sizeValue * 10) + px;
-	font-size: $sizeValue + rem;
-}
-
-$base-line-height: 1.25;
-$modular-scale-ratio: $perfect-fourth;
-$modular-scale-base: 2.25rem;
-$line-height: 1rem * 1.25;
-
-// Use Margin top only - it allows every item to set itself exactly where it needs to be
-
-
 body {
 	font-family: "minerva-modern", sans-serif; 
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	line-height: 1.25;
+}
+h1 {
+	font-size: 2.40rem;
+}
+p {
+	font-size: 1.6rem;
+}
+/*
+$base-line-height: 1.25;
+$modular-scale-ratio: $major-second;
+$modular-scale-base: 1.4rem;
+$line-height: 1rem * 1.25;
+
 	font-weight: 400;
 	font-style: normal;
 	font-size: modular-scale(1);
 	line-height: ($base-line-height * 1);
 	padding: 1.25rem;
-	margin: 0 auto;
 }
 h1 {
 	font-family: inherit;
 	font-weight: 600;
 	font-style: inherit;
-	font-size: modular-scale(3);
+	font-size: modular-scale(2);
 	line-height: $base-line-height;
 	margin-top: ($base-line-height * 1);
 	margin-bottom: 0em;
@@ -54,26 +62,6 @@ h3 {
 	margin-top: ($base-line-height * 1);
 	margin-bottom: 0em;
 }
-/* Not in use for this project, values are placeholders only
-h4 {
-	font-family: inherit;
-	font-weight: 600;
-	font-style: inherit;
-	font-size: 1rem;
-	line-height: 1.25rem;
-	margin-top: 1.25rem;
-	margin-bottom: 0rem;
-}
-h5 {
-	font-family: inherit;
-	font-weight: 400;
-	font-style: italic;
-	font-size: 1rem;
-	line-height: 1.25rem;
-	margin-top: 1.25rem;
-	margin-bottom: 0rem;
-}
-*/
 p, ul, ol, pre, table, blockquote {
 	margin-top: ($base-line-height * 1);
 	margin-bottom: 0rem;
@@ -99,4 +87,4 @@ sub {
 	bottom: -0.25em;
 }
 
-
+*/

@@ -15,85 +15,89 @@ html {
   font-size: 10px; }
 
 body {
-  font-family: "minerva-modern", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2.99925rem;
-  line-height: 1.25;
-  padding: 1.25rem;
-  margin: 0 auto; }
+  font-family: "minerva-modern", sans-serif; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  line-height: 1.25; }
 
 h1 {
-  font-family: inherit;
-  font-weight: 600;
-  font-style: inherit;
-  font-size: 5.32933rem;
-  line-height: 1.25;
-  margin-top: 1.25;
-  margin-bottom: 0em; }
+  font-size: 2.40rem; }
 
-h2 {
-  font-family: inherit;
-  font-weight: 600;
-  font-style: inherit;
-  font-size: 3.998rem;
-  line-height: 2.5;
-  margin-top: 1.25;
-  margin-bottom: 0em; }
+p {
+  font-size: 1.6rem; }
 
-h3 {
-  font-family: inherit;
-  font-weight: 600;
-  font-style: inherit;
-  font-size: 3.998rem;
-  line-height: 2.5;
-  margin-top: 1.25;
-  margin-bottom: 0em; }
+/*
+$base-line-height: 1.25;
+$modular-scale-ratio: $major-second;
+$modular-scale-base: 1.4rem;
+$line-height: 1rem * 1.25;
 
-/* Not in use for this project, values are placeholders only
-h4 {
+	font-weight: 400;
+	font-style: normal;
+	font-size: modular-scale(1);
+	line-height: ($base-line-height * 1);
+	padding: 1.25rem;
+}
+h1 {
 	font-family: inherit;
 	font-weight: 600;
 	font-style: inherit;
-	font-size: 1rem;
-	line-height: 1.25rem;
-	margin-top: 1.25rem;
-	margin-bottom: 0rem;
+	font-size: modular-scale(2);
+	line-height: $base-line-height;
+	margin-top: ($base-line-height * 1);
+	margin-bottom: 0em;
 }
-h5 {
+h2 {
 	font-family: inherit;
-	font-weight: 400;
-	font-style: italic;
-	font-size: 1rem;
-	line-height: 1.25rem;
-	margin-top: 1.25rem;
+	font-weight: 600;
+	font-style: inherit;
+	font-size: modular-scale(2);
+	line-height: $base-line-height * 2;
+	margin-top: ($base-line-height * 1);
+	margin-bottom: 0em;
+}
+h3 {
+	font-family: inherit;
+	font-weight: 600;
+	font-style: inherit;
+	font-size: modular-scale(2);
+	line-height: $base-line-height * 2;
+	margin-top: ($base-line-height * 1);
+	margin-bottom: 0em;
+}
+p, ul, ol, pre, table, blockquote {
+	margin-top: ($base-line-height * 1);
 	margin-bottom: 0rem;
 }
-*/
-p, ul, ol, pre, table, blockquote {
-  margin-top: 1.25;
-  margin-bottom: 0rem; }
-
 ul ul, ol ol, ul ol, ol ul {
-  margin-top: 0;
-  margin-bottom: 0; }
-
+	margin-top: 0;
+	margin-bottom: 0;
+}
 hr {
-  border: 1px solid;
-  margin: -1px 0; }
-
+	border: 1px solid;
+	margin: -1px 0;
+}
 b, strong, em, small, code {
-  line-height: 1; }
-
+	line-height: 1;
+}
 sup {
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-  top: -0.5em; }
-
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+	top: -0.5em;
+}
 sub {
-  bottom: -0.25em; }
+	bottom: -0.25em;
+}
 
+*/
 /****COLORS******/
 /*** BRIGHT PALETTE
 $light: #D9C9B8;
@@ -119,8 +123,8 @@ $text-light-color {}
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 65.88078%;
-  margin-left: 17.05961%;
+  width: 82.94039%;
+  margin-left: 8.5298%;
   padding: 1em;
   background-color: white;
   position: relative;
@@ -130,14 +134,15 @@ $text-light-color {}
   position: relative;
   z-index: 2;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
-  border-radius: 5px; }
+  height: 17em;
+  border-radius: 10px; }
   .header:last-child {
     margin-right: 0; }
 
 #logo {
   display: inline-block;
   z-index: 10;
-  max-height: 5em; }
+  max-height: 7em; }
 
 .page-down, .page-up {
   position: absolute;
@@ -150,17 +155,25 @@ $text-light-color {}
 .page-down {
   bottom: -8%; }
 
-.page-up {
+.up-button {
   top: -8%;
   transform: rotate(180deg); }
 
 .down-button.svg {
-  height: 12rem;
-  width: 12rem; }
+  bottom: 0%;
+  height: 5em;
+  width: 5em; }
 
 .down-button.svg path {
   fill: #E1EFEB; }
 
+@media (min-width: 450px) {
+  .header {
+    height: 20em;
+    font-size: 8px; }
+
+  h1 {
+    font-size: 24px; } }
 .content {
   float: left;
   display: block;
@@ -174,9 +187,8 @@ $text-light-color {}
   justify-content: space-around;
   height: 50%;
   padding: 2em;
-  margin-top: 10em;
+  top: calc(25em + 8%);
   position: fixed;
-  top: 37%;
   border-radius: 5px;
   background-color: white;
   color: #178166; }
@@ -190,7 +202,7 @@ $text-light-color {}
   visibility: hidden; }
 
 body {
-  background: linear-gradient(rgba(23, 129, 102, 0.1), rgba(23, 129, 102, 0.1)), url(../img/dirt.jpeg); }
+  background: linear-gradient(rgba(23, 129, 102, 0.1), rgba(23, 129, 102, 0.1)), url(../img/background.png) 50%/cover no-repeat; }
 
 .icon {
   display: inline-block;
@@ -276,7 +288,8 @@ body {
   border-radius: 50%;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23);
   bottom: 3em;
-  right: 2em;
+  right: 15%;
+  transform: translateX(50%);
   /* Target Properties 
   	height: 9rem;
   	width: 9rem;
@@ -298,7 +311,7 @@ body {
   z-index: 2;
   color: #178166; }
   .carousel h1 {
-    margin-top: 1rem; }
+    margin-top: 0.4em; }
 
 .carousel-header,
 #carousel1,

@@ -1,4 +1,5 @@
 // TODO: Change name from main to something else, its confusing
+// IDEA: Fixed heights with em's and relative positions with %
 
 .content {
 	@include span-columns(10);
@@ -11,10 +12,10 @@
 	justify-content: space-around;
 	height: 50%;
 	padding: 2em;
-	margin-top: 10em;
+	// top: calc(19em + 8%); this is the position JS will setit too
+	top: calc(25em + 8%); // this is what JS animations from
 
 	position: fixed;
-	top: 37%;
 
 	border-radius: $b-radius;
 	background-color: white;
@@ -31,7 +32,7 @@
 body {
 	background:
 		linear-gradient(rgba($brand-color, 0.1), rgba($brand-color, 0.1)),
-		url(../img/dirt.jpeg);
+		url(../img/background.png) 50%/cover no-repeat;
 }
 
 .icon {
@@ -56,3 +57,4 @@ body {
 	background-color: $brand-color;
 	border-color: $background-light-color;
 }
+

@@ -6,7 +6,8 @@
 	@include elevation-3;
 	
 	bottom: 3em;
-	right: 2em;
+	right: 15%;
+	transform: translateX(50%); // to be animated by JS
 
 /* Target Properties 
 	height: 9rem;
