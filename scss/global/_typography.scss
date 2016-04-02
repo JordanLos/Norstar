@@ -2,21 +2,22 @@
 
 // html font size at 10 to keep rems to 10
 html {
-	font-size: 10px;
+	font-size: 7px;
 }
-
-@mixin font-size($sizeValue: 1.6) {
-	font-size: ($sizeValue * 10) + px;
-	font-size: $sizeValue + rem;
+@media (min-width: 800px) {
+	html {
+		font-size: 8px; 
+	}
 }
-
+@media (min-width: 1200px) {
+	html {
+		font-size: 16px; 
+	}
+}
 $base-line-height: 1.25;
-$modular-scale-ratio: $perfect-fourth;
-$modular-scale-base: 2.25rem;
+$modular-scale-ratio: $major-third;
+$modular-scale-base: 2.95rem;
 $line-height: 1rem * 1.25;
-
-// Use Margin top only - it allows every item to set itself exactly where it needs to be
-
 
 body {
 	font-family: "minerva-modern", sans-serif; 
@@ -25,7 +26,6 @@ body {
 	font-size: modular-scale(1);
 	line-height: ($base-line-height * 1);
 	padding: 1.25rem;
-	margin: 0 auto;
 }
 h1 {
 	font-family: inherit;
@@ -54,26 +54,6 @@ h3 {
 	margin-top: ($base-line-height * 1);
 	margin-bottom: 0em;
 }
-/* Not in use for this project, values are placeholders only
-h4 {
-	font-family: inherit;
-	font-weight: 600;
-	font-style: inherit;
-	font-size: 1rem;
-	line-height: 1.25rem;
-	margin-top: 1.25rem;
-	margin-bottom: 0rem;
-}
-h5 {
-	font-family: inherit;
-	font-weight: 400;
-	font-style: italic;
-	font-size: 1rem;
-	line-height: 1.25rem;
-	margin-top: 1.25rem;
-	margin-bottom: 0rem;
-}
-*/
 p, ul, ol, pre, table, blockquote {
 	margin-top: ($base-line-height * 1);
 	margin-bottom: 0rem;

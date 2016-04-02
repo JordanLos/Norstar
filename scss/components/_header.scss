@@ -1,15 +1,15 @@
 .header {
 	@include span-columns(8);
 	@include shift(2);
-	@include pad(1em);
 	background-color: white;
 	@include vertical-align;
 	overflow: hidden;
 	position: relative;
 	z-index: 2;
 	@include elevation-2;
+	height: 25%;
 	
-	border-radius: $b-radius;
+	border-radius: 10px;
 }
 
 #logo {
@@ -42,6 +42,22 @@
 
 .down-button.svg path {
 	fill: $text-light-color;
+}
+
+#brand {
+	height: 50%;
+	color: $text-light-color;
+	background-color: $brand-color;
+	.new-logo {
+		text-align: center;
+		margin-top: -0.5em;
+	}
+	@include elevation-1;
+}
+#logo path {
+	fill: $text-light-color;
+}
+.new-logo {
 }
 
 

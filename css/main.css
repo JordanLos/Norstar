@@ -12,22 +12,27 @@ html {
 
 /*****TYPOGRAPHY*****/
 html {
-  font-size: 10px; }
+  font-size: 7px; }
 
+@media (min-width: 800px) {
+  html {
+    font-size: 8px; } }
+@media (min-width: 1200px) {
+  html {
+    font-size: 16px; } }
 body {
   font-family: "minerva-modern", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 2.99925rem;
+  font-size: 3.6875rem;
   line-height: 1.25;
-  padding: 1.25rem;
-  margin: 0 auto; }
+  padding: 1.25rem; }
 
 h1 {
   font-family: inherit;
   font-weight: 600;
   font-style: inherit;
-  font-size: 5.32933rem;
+  font-size: 5.76172rem;
   line-height: 1.25;
   margin-top: 1.25;
   margin-bottom: 0em; }
@@ -36,7 +41,7 @@ h2 {
   font-family: inherit;
   font-weight: 600;
   font-style: inherit;
-  font-size: 3.998rem;
+  font-size: 4.60938rem;
   line-height: 2.5;
   margin-top: 1.25;
   margin-bottom: 0em; }
@@ -45,31 +50,11 @@ h3 {
   font-family: inherit;
   font-weight: 600;
   font-style: inherit;
-  font-size: 3.998rem;
+  font-size: 4.60938rem;
   line-height: 2.5;
   margin-top: 1.25;
   margin-bottom: 0em; }
 
-/* Not in use for this project, values are placeholders only
-h4 {
-	font-family: inherit;
-	font-weight: 600;
-	font-style: inherit;
-	font-size: 1rem;
-	line-height: 1.25rem;
-	margin-top: 1.25rem;
-	margin-bottom: 0rem;
-}
-h5 {
-	font-family: inherit;
-	font-weight: 400;
-	font-style: italic;
-	font-size: 1rem;
-	line-height: 1.25rem;
-	margin-top: 1.25rem;
-	margin-bottom: 0rem;
-}
-*/
 p, ul, ol, pre, table, blockquote {
   margin-top: 1.25;
   margin-bottom: 0rem; }
@@ -121,7 +106,6 @@ $text-light-color {}
   margin-right: 2.35765%;
   width: 65.88078%;
   margin-left: 17.05961%;
-  padding: 1em;
   background-color: white;
   position: relative;
   top: 50%;
@@ -130,7 +114,8 @@ $text-light-color {}
   position: relative;
   z-index: 2;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
-  border-radius: 5px; }
+  height: 25%;
+  border-radius: 10px; }
   .header:last-child {
     margin-right: 0; }
 
@@ -159,6 +144,18 @@ $text-light-color {}
   width: 12rem; }
 
 .down-button.svg path {
+  fill: #E1EFEB; }
+
+#brand {
+  height: 50%;
+  color: #E1EFEB;
+  background-color: #178166;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.24); }
+  #brand .new-logo {
+    text-align: center;
+    margin-top: -0.5em; }
+
+#logo path {
   fill: #E1EFEB; }
 
 .content {
@@ -190,7 +187,7 @@ $text-light-color {}
   visibility: hidden; }
 
 body {
-  background: linear-gradient(rgba(23, 129, 102, 0.1), rgba(23, 129, 102, 0.1)), url(../img/dirt.jpeg); }
+  background: linear-gradient(rgba(23, 129, 102, 0.1), rgba(23, 129, 102, 0.1)), url(../img/background.png) 50%/cover no-repeat; }
 
 .icon {
   display: inline-block;
@@ -296,7 +293,8 @@ body {
   text-align: center;
   overflow: hidden;
   z-index: 2;
-  color: #178166; }
+  color: #178166;
+  margin-top: 8%; }
   .carousel h1 {
     margin-top: 1rem; }
 
