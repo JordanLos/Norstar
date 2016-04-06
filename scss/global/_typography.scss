@@ -23,6 +23,23 @@ h1 {
 p {
 	font-size: 1.6rem;
 }
+
+@media(max-width: 750px) {
+	h1 {
+		font-size: 1.8rem;
+	}
+	p {
+		font-size: 1.4rem;
+	}
+}
+@media(min-width: 750px) {
+	h1 {
+		font-size: 3.0rem;
+	}
+	p {
+		font-size: 2.2rem;
+	}
+}
 /*
 $base-line-height: 1.25;
 $modular-scale-ratio: $major-second;

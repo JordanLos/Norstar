@@ -1,26 +1,19 @@
 .header {
-	@include span-columns(10);
-	@include shift(1);
-	@include pad(1em);
+	@include span-columns(8);
+	@include shift(2);
 	background-color: white;
 	@include vertical-align;
 	overflow: hidden;
 	position: relative;
 	z-index: 2;
 	@include elevation-2;
-	height: 17em;
-	
+	height: 25%;
 	border-radius: 10px;
+	padding: 0.5em 1em;
+	background: 
+		linear-gradient($brand-color, $brand-color 50%, white 50%, white);
 }
 
-
-#logo {
-	display: inline-block;
-	z-index: 10;
-	max-height: 7em;
-	// TODO: make hieght multiople of line-height
-
-}
 
 .page-down, .page-up {
 	position: absolute;
@@ -33,29 +26,58 @@
 .page-down {
 	bottom: -8%;
 }
-.up-button {
+.page-up {
 	top: -8%;
 	transform: rotate(180deg);
 }
 .down-button.svg {
-	bottom: 0%;
-	height: 5em;
-	width: 5em;
+	height: 95%;
+	width: 95%;
 }
 
 .down-button.svg path {
 	fill: $text-light-color;
 }
 
-@media (min-width: 450px) {
-	.header {
-		height: 20em;
-		font-size: 8px;
-	}
-	h1 {
-		font-size: 24px;
-	}
 
+#brand {
+	height: 50%;
+	padding: 2% 0;
+	color: $text-light-color;
+	background-color: $brand-color;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#logo {
+	display: inline-block;
+	z-index: 10;
+	height: 10em;
+	width: 10em;
 }
 
+@media(min-width: 450px) {
+	#brand {
+		flex-direction: row;
+	}
+}
+@media(min-width: 750px) {
+	#logo {
+		height: 12em;
+		width: 12em;
+	}
+}
+#logo path {
+	fill: $text-light-color;
+}
+
+@media (min-width: 750px) {
+	.header {
+	}
+}
+@media (min-width: 850px) {
+	.header {
+	}
+}
 

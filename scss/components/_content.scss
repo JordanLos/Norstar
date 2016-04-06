@@ -1,5 +1,4 @@
 // TODO: Change name from main to something else, its confusing
-// IDEA: Fixed heights with em's and relative positions with %
 
 .content {
 	@include span-columns(10);
@@ -10,23 +9,27 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
-	height: 50%;
+	height: 56%;
 	padding: 2em;
-	// top: calc(19em + 8%); this is the position JS will setit too
-	top: calc(25em + 8%); // this is what JS animations from
 
 	position: fixed;
+	// top: 34%; the height of header + .page* + 1% margin and will be set by JS
+	top: 44%;
 
 	border-radius: $b-radius;
 	background-color: white;
 	color: $text-dark-color;
+	> p {
+		max-width: 800px;
+		text-align: justify;
+	}
 }
 
 #section1,
 #section2,
 #section3,
 #section4 {
-	visibility: hidden; // To be altered by Javascript
+	visibility: hidden;
 }
 
 body {
@@ -56,5 +59,8 @@ body {
 .icon:hover {
 	background-color: $brand-color;
 	border-color: $background-light-color;
+}
+
+@media (min-width: 750px) {
 }
 

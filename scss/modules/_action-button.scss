@@ -5,9 +5,8 @@
 	border-radius: 50%;
 	@include elevation-3;
 	
-	bottom: 3em;
-	right: 15%;
-	transform: translateX(50%); // to be animated by JS
+	bottom: 5%;
+	right: 5vw;
 
 /* Target Properties 
 	height: 9rem;
@@ -20,8 +19,8 @@
 		#178166;
 */
 /* Properties set for Javascript animations */
-	height: 0em;
-	width: 0em;
+	height: 0vw;
+	width: 0vw;
 	background-color: $accent-color;
 	
 }
