@@ -1,356 +1,83 @@
-html {
-  box-sizing: border-box; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-html {
-  box-sizing: border-box; }
-
-*, *:after, *:before {
-  box-sizing: inhereit; }
-
-/*****TYPOGRAPHY*****/
-html {
-  font-size: 10px; }
-
-body {
-  font-family: "minerva-modern", sans-serif; }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-  line-height: 1.25; }
-
-h1 {
-  font-size: 2.40rem; }
-
-p {
-  font-size: 1.6rem; }
-
-@media (max-width: 750px) {
-  h1 {
-    font-size: 1.8rem; }
-
-  p {
-    font-size: 1.4rem; } }
-@media (min-width: 750px) {
-  h1 {
-    font-size: 3.0rem; }
-
-  p {
-    font-size: 2.2rem; } }
 /*
-$base-line-height: 1.25;
-$modular-scale-ratio: $major-second;
-$modular-scale-base: 1.4rem;
-$line-height: 1rem * 1.25;
+Error: Invalid CSS after "...lign: justify;t": expected "{", was "}"
+        on line 25 of scss/components/_content.scss
+        from line 16 of scss/main.scss
 
-	font-weight: 400;
-	font-style: normal;
-	font-size: modular-scale(1);
-	line-height: ($base-line-height * 1);
-	padding: 1.25rem;
-}
-h1 {
-	font-family: inherit;
-	font-weight: 600;
-	font-style: inherit;
-	font-size: modular-scale(2);
-	line-height: $base-line-height;
-	margin-top: ($base-line-height * 1);
-	margin-bottom: 0em;
-}
-h2 {
-	font-family: inherit;
-	font-weight: 600;
-	font-style: inherit;
-	font-size: modular-scale(2);
-	line-height: $base-line-height * 2;
-	margin-top: ($base-line-height * 1);
-	margin-bottom: 0em;
-}
-h3 {
-	font-family: inherit;
-	font-weight: 600;
-	font-style: inherit;
-	font-size: modular-scale(2);
-	line-height: $base-line-height * 2;
-	margin-top: ($base-line-height * 1);
-	margin-bottom: 0em;
-}
-p, ul, ol, pre, table, blockquote {
-	margin-top: ($base-line-height * 1);
-	margin-bottom: 0rem;
-}
-ul ul, ol ol, ul ol, ol ul {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-hr {
-	border: 1px solid;
-	margin: -1px 0;
-}
-b, strong, em, small, code {
-	line-height: 1;
-}
-sup {
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-	top: -0.5em;
-}
-sub {
-	bottom: -0.25em;
-}
+20: 	background-color: white;
+21: 	color: $text-dark-color;
+22: 	> p {
+23: 		max-width: 800px;
+24: 		text-align: justify;t
+25: 	}
+26: }
+27: 
+28: #section1,
+29: #section2,
+30: #section3,
 
+Backtrace:
+scss/components/_content.scss:25
+scss/main.scss:16
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1161:in `expected'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1097:in `expected'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1092:in `tok!'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:637:in `block'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:707:in `declaration_or_ruleset'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:657:in `block_child'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:649:in `block_contents'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:638:in `block'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:707:in `declaration_or_ruleset'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:657:in `block_child'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:649:in `block_contents'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:638:in `block'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:631:in `ruleset'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:656:in `block_child'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:646:in `block_contents'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:117:in `stylesheet'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:42:in `parse'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/engine.rb:403:in `_to_tree'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/engine.rb:309:in `to_tree'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:324:in `block in visit_import'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:88:in `block in with_import'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:88:in `with_import'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:323:in `visit_import'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `with_base'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `map'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/root_node.rb:36:in `css_tree'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/engine.rb:295:in `render_with_sourcemap'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `each'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:252:in `call'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapter.rb:254:in `call'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
+/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
 */
-/****COLORS******/
-/*** BRIGHT PALETTE
-$light: #D9C9B8;
-$dark: #5B4C3E;
-$medium: #8B796C;
-*/
-/* MUTED PALETTE */
-/* Decorations */
-/*
-$brand-color {}
-$background-light-color {}
-$background-dark-color
-$accent-color {}
-$text-dark-color {}
-$text-light-color {}
-*/
-.overlay {
-  position: absolute;
-  height: 100vh;
-  width: 100%; }
-
-.header {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 65.88078%;
-  margin-left: 17.05961%;
-  background-color: white;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  overflow: hidden;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
-  height: 25%;
-  border-radius: 10px;
-  padding: 0.5em 1em;
-  background: linear-gradient(#178166, #178166 50%, white 50%, white); }
-  .header:last-child {
-    margin-right: 0; }
-
-.page-down, .page-up {
-  position: absolute;
-  width: 100%;
-  height: 8%;
-  z-index: 2;
-  display: flex;
-  justify-content: center; }
-
-.page-down {
-  bottom: -8%; }
-
-.page-up {
-  top: -8%;
-  transform: rotate(180deg); }
-
-.down-button.svg {
-  height: 95%;
-  width: 95%; }
-
-.down-button.svg path {
-  fill: #E1EFEB; }
-
-#brand {
-  height: 50%;
-  padding: 2% 0;
-  color: #E1EFEB;
-  background-color: #178166;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-
-#logo {
-  display: inline-block;
-  z-index: 10;
-  height: 10em;
-  width: 10em; }
-
-@media (min-width: 450px) {
-  #brand {
-    flex-direction: row; } }
-@media (min-width: 750px) {
-  #logo {
-    height: 12em;
-    width: 12em; } }
-#logo path {
-  fill: #E1EFEB; }
-
-.content {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 82.94039%;
-  margin-left: 8.5298%;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  height: 56%;
-  padding: 2em;
-  position: fixed;
-  top: 44%;
-  border-radius: 5px;
-  background-color: white;
-  color: #178166; }
-  .content:last-child {
-    margin-right: 0; }
-  .content > p {
-    max-width: 800px;
-    text-align: justify; }
-
-#section1,
-#section2,
-#section3,
-#section4 {
-  visibility: hidden; }
-
-body {
-  background: linear-gradient(rgba(23, 129, 102, 0.1), rgba(23, 129, 102, 0.1)), url(../img/background.png) 50%/cover no-repeat; }
-
-.icon {
-  display: inline-block;
-  max-width: 7em;
-  max-height: 7em; }
-
-.icon path {
-  fill: #178166; }
-
-.icon {
-  padding: 0.5em;
-  border-radius: 15%;
-  border: 0.3em solid #178166;
-  background-color: #e8f6f1; }
-
-.icon:hover path {
-  fill: #e8f6f1; }
-
-.icon:hover {
-  background-color: #178166;
-  border-color: #e8f6f1; }
-
-.contact {
-  background-color: #e8f6f1;
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 82.94039%;
-  margin-left: 8.5298%;
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  box-orient: vertical;
-  -webkit-box-direction: normal;
-  -moz-box-direction: normal;
-  box-direction: normal;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-direction: column;
-  -webkit-box-pack: distribute;
-  -moz-box-pack: distribute;
-  box-pack: distribute;
-  -webkit-justify-content: space-around;
-  -moz-justify-content: space-around;
-  -ms-justify-content: space-around;
-  -o-justify-content: space-around;
-  justify-content: space-around;
-  -ms-flex-pack: distribute;
-  overflow: hidden;
-  position: fixed;
-  height: 00%;
-  width: 00%;
-  margin-top: 10em;
-  margin-left: 50%;
-  top: 25%;
-  border-radius: 5px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23);
-  z-index: 5; }
-  .contact:last-child {
-    margin-right: 0; }
-
-.media {
-  margin-left: 8.5298%;
-  visibility: 0; }
-
-.media-img {
-  display: inline-block;
-  max-width: 3em;
-  max-height: 3em;
-  margin-right: 2em;
-  vertical-align: middle; }
-
-.action-button_floating {
-  position: absolute;
-  z-index: 3;
-  border-radius: 50%;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23);
-  bottom: 5%;
-  right: 5vw;
-  /* Target Properties 
-  	height: 9rem;
-  	width: 9rem;
-  	padding: 2rem;
-  	background:
-  		url(../img/phone.svg) 
-  		center / 62% 
-  		no-repeat 
-  		#178166;
-  */
-  /* Properties set for Javascript animations */
-  height: 0vw;
-  width: 0vw;
-  background-color: #F9E3B0; }
-
-.carousel {
-  text-align: center;
-  overflow: hidden;
-  z-index: 2;
-  color: #178166;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 50%; }
-  .carousel h1 {
-    margin-top: 0.5em; }
-
-.carousel-header,
-#carousel1,
-#carousel2,
-#carousel3,
-#carousel4 {
-  visibility: hidden;
-  display: none; }
-
-/*# sourceMappingURL=main.css.map */
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...lign: justify;t\": expected \"{\", was \"}\"\A         on line 25 of scss/components/_content.scss\A         from line 16 of scss/main.scss\A \A 20: 	background-color: white;\A 21: 	color: $text-dark-color;\A 22: 	> p {\A 23: 		max-width: 800px;\A 24: 		text-align: justify;t\A 25: 	}\A 26: }\A 27: \A 28: #section1,\A 29: #section2,\A 30: #section3,"; }

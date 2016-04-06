@@ -39,6 +39,22 @@
 	fill: $text-light-color;
 }
 
+#brand {
+	height: 50%;
+	color: $text-light-color;
+	background-color: $brand-color;
+	.new-logo {
+		text-align: center;
+		margin-top: -0.5em;
+	}
+	@include elevation-1;
+}
+#logo path {
+	fill: $text-light-color;
+}
+.new-logo {
+}
+
 
 #brand {
 	height: 50%;
