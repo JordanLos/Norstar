@@ -1,30 +1,32 @@
 .contact {
-/*
-	background-color: $background-light-color;
-
-
-	@include span-columns(10);
-	@include shift(1);
-	@include display(flex);
-	@include flex-direction(column);
-	@include justify-content(space-around);
-	overflow: hidden;
-
-	position: fixed;
-	height: 00%;
-	width: 00%;
-
-	top: 50%;
-	margin-left: 50%;
-
-
-	border-radius: $b-radius;
-	@include elevation-2;
-
-	z-index:2;
-	*/
 	visibility: hidden;
 	z-index:2;
 
+}
+
+.media {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.media-img {
+	display: inline-block;
+	height: 3em;
+	width: 5em;
+	margin-right: 2em;
+}
+
+@media(min-width: 450px) {
+	.media-img {
+		height: 5em;
+		width: 6em;
+		margin-right: 2em;
+		margin-bottom: 1em;
+	}
+	.media {
+		flex-direction: column;
+	}
 }
 
