@@ -81,12 +81,14 @@ $( document ).ready(function() {
 	actionButton.init = { // Used in FULLPAGE section TODO: MAKE CSS object section
 		right:'5vw',
 		height:'10vw',
-		width:'10vw'
+		width:'10vw',
+		boxShadow:'0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23)'
 	};
 	actionButton.center = {
-		right:'42.5vw',
-		height:'15vw',
-		width:'15vw'
+		right:'44.0vw',
+		height:'12vw',
+		width:'12vw',
+		boxShadow:'0px 14px 28px rgba(0, 0, 0, 0.25), 0px 10px 10px rgba(0, 0, 0, 0.22)'
 	};
 
 	function moveToContent(tl) {
@@ -170,10 +172,10 @@ $( document ).ready(function() {
 			var lastPage = $('#fullpage .section').length;
 			if (index == (lastPage) && direction == 'up') {
                 TweenMax.to('.page-down', 0.15, { bottom:'0%' })
-				TweenMax.to('.action-button_floating', 0.3, actionButton.init)
+				TweenMax.to('.action-button_floating', 0.4, actionButton.init)
 			} else if (index == (lastPage - 1) && direction == 'down') { 
                 TweenMax.to('.page-down', 0.15, { bottom:'-8%' })
-				TweenMax.to('.action-button_floating', 0.3, actionButton.center)
+				TweenMax.to('.action-button_floating', 0.4, actionButton.center)
 			};	
 		}
 	});

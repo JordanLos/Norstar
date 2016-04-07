@@ -3,14 +3,14 @@
 .content {
 	@include span-columns(10);
 	@include shift(1);
-	@include elevation-2;
+	@include elevation-1;
 
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
 	height: 56%;
-	padding: 2em;
+	padding: 5%;
 
 	position: fixed;
 	// top: 34%; the height of header + .page* + 1% margin and will be set by JS
@@ -21,7 +21,7 @@
 	color: $text-dark-color;
 	> p {
 		max-width: 800px;
-		text-align: justify;t
+		text-align: justify;
 	}
 }
 
