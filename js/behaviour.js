@@ -96,6 +96,7 @@ $( document ).ready(function() {
 	var openingScene	= new TimelineLite({paused:true} );
 	var openingTl = moveToContent(openingScene);
 	var clickCounter = 0;
+	var thisPage = 0;
 
 	$('#fullpage').fullpage({
 		scrollingSpeed: 1000,
@@ -152,23 +153,39 @@ $( document ).ready(function() {
                 TweenMax.to('.page-down', 0.15, { bottom:'-8%' })
 				TweenMax.to('.action-button_floating', 0.4, { bottom:'-8%' })
 			};	
-
 			if (clickCounter == 1) {
-				TweenMax.to('#section4', 0.3, {autoAlpha:0, top:'44%'})
-				clickCounter = 0;
-					console.log(clickCounter);
+					TweenMax.to('#section4', 0.3, {autoAlpha:0, top:'44%'})
+					TweenMax.to('#carousel4', 0.3, hd, "hd" )
+					clickCounter = 0;
+			};
+
+			if (direction == 'down') {
+				thisPage = index;
+			} else if (direction == 'up') {
+				thisPage = index - 2;
 			}
+		}
+	});
 
 			$('.action-button_floating').click(function(){
+				var headerActive = '#carousel' + thisPage.toString();  
+				var contentActive = '#section' + thisPage.toString();  
+				var tl = new TimelineLite();
 				if (clickCounter == 0) {
-					TweenMax.to('#section4', 0.3, {autoAlpha:1, top:'35%'})
+					tl.to(headerActive, 0.3, hd, "hd")
+					.to(contentActive, 0.3, {autoAlpha:0, top:'44%'}, "hd")
+					.to('#section4', 0.3, { autoAlpha:1, top:'35%'}, "dsp")
+					.to('#carousel4', 0.3, dsp, "dsp" )
+
 					clickCounter = 1;
 				} else if (clickCounter == 1) {
-					TweenMax.to('#section4', 0.3, {autoAlpha:0, top:'44%'})
+					tl.to('#section4', 0.3, { autoAlpha:0, top:'44%'}, "hd")
+					.to('#carousel4', 0.3, hd, "hd" )
+					.to(headerActive, 0.3, dsp, "dsp")
+					.to(contentActive, 0.3, {autoAlpha:1, top:'35%'}, "dsp")
+
 					clickCounter = 0;
 				}
 			});
-		}
-	});
 
 });
