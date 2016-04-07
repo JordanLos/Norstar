@@ -22,32 +22,6 @@ $( document ).ready(function() {
 		});
 	};
 
-/******* CONTACT BUTTON *********/
-	var clickCounter = 0,
-		buttonClick = new TimelineLite(),
-		contact = {
-			top:'10%',
-			height:'50%',
-			width:'100%',
-			marginLeft:'0%'
-		};
-
-	function openDiv(tl) {
-		tl.to('.contact', 0.05, a1)
-		.to('.contact', 0.2, contact) 
-		.to('.media', 0.2, a1)
-	};
-
-	$('.action-button_floating').click( function() {
-		openDiv(buttonClick);
-		if (clickCounter % 2 == 1) {
-			buttonClick.reverse();
-		} else {
-			buttonClick.play();
-		};
-		clickCounter++;
-	});
-		
 
 /********* OPENING SCENE **********/
 	var header = new Object(),
@@ -121,6 +95,7 @@ $( document ).ready(function() {
 /********** FULLPAGE OPERATION *********/	
 	var openingScene	= new TimelineLite({paused:true} );
 	var openingTl = moveToContent(openingScene);
+	var clickCounter = 0;
 
 	$('#fullpage').fullpage({
 		scrollingSpeed: 1000,
@@ -140,6 +115,7 @@ $( document ).ready(function() {
 				var headerNext = '#carousel' + (index).toString();
 				var contentNext = '#section' + (index).toString();
 			}
+			var lastPage = $('#fullpage .section').length;
 				
 			// Hide content/header combo
 			function hideCombo(tl, header, content){
@@ -169,14 +145,29 @@ $( document ).ready(function() {
 			// Last Page:
 			// 1. Hide page-down icon to indicate end of document
 			// 2. Move action-button as a call to action on last page
-			var lastPage = $('#fullpage .section').length;
-			if (index == (lastPage) && direction == 'up') {
+			if (index == lastPage && direction == 'up') {
                 TweenMax.to('.page-down', 0.15, { bottom:'0%' })
-				TweenMax.to('.action-button_floating', 0.4, actionButton.init)
+				TweenMax.to('.action-button_floating', 0.4, { bottom:'5%' })
 			} else if (index == (lastPage - 1) && direction == 'down') { 
                 TweenMax.to('.page-down', 0.15, { bottom:'-8%' })
-				TweenMax.to('.action-button_floating', 0.4, actionButton.center)
+				TweenMax.to('.action-button_floating', 0.4, { bottom:'-8%' })
 			};	
+
+			if (clickCounter == 1) {
+				TweenMax.to('#section4', 0.3, {autoAlpha:0, top:'44%'})
+				clickCounter = 0;
+					console.log(clickCounter);
+			}
+
+			$('.action-button_floating').click(function(){
+				if (clickCounter == 0) {
+					TweenMax.to('#section4', 0.3, {autoAlpha:1, top:'35%'})
+					clickCounter = 1;
+				} else if (clickCounter == 1) {
+					TweenMax.to('#section4', 0.3, {autoAlpha:0, top:'44%'})
+					clickCounter = 0;
+				}
+			});
 		}
 	});
 

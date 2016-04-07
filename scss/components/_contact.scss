@@ -1,5 +1,5 @@
 .contact {
-
+/*
 	background-color: $background-light-color;
 
 
@@ -14,15 +14,17 @@
 	height: 00%;
 	width: 00%;
 
-	margin-top: 10em;
+	top: 50%;
 	margin-left: 50%;
-	top: 25%;
 
 
 	border-radius: $b-radius;
 	@include elevation-2;
 
-	z-index:5;
+	z-index:2;
+	*/
+	visibility: hidden;
+	z-index:2;
 
 }
 
