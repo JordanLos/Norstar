@@ -1,7 +1,6 @@
 .header {
 	@include span-columns(8);
 	@include shift(2);
-	background-color: white;
 	@include vertical-align;
 	overflow: hidden;
 	position: relative;
@@ -28,34 +27,17 @@
 }
 .page-up {
 	top: -8%;
-	transform: rotate(180deg);
 }
 .down-button.svg {
 	height: 95%;
 	width: 95%;
 }
 
-.down-button.svg path {
-	fill: $text-light-color;
-}
-
-#brand {
-	height: 50%;
-	color: $text-light-color;
-	background-color: $brand-color;
-	text-align: center;
-}
-#logo path {
-	fill: $text-light-color;
-}
-.new-logo {
-}
 
 
 #brand {
 	height: 50%;
 	padding: 2% 0;
-	color: $text-light-color;
 	background-color: $brand-color;
 	display: flex;
 	flex-direction: column;
@@ -65,25 +47,8 @@
 #logo {
 	display: inline-block;
 	z-index: 10;
-	height: 10em;
-	width: 10em;
+	width: 90%;
 }
 
-@media(min-width: 450px) {
-	#brand {
-		flex-direction: row;
-	}
-	.new-logo {
-	}
-}
-@media(min-width: 750px) {
-	#logo {
-		height: 12em;
-		width: 12em;
-	}
-}
-#logo path {
-	fill: $text-light-color;
-}
 
 

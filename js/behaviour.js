@@ -50,7 +50,7 @@ $( document ).ready(function() {
 		width:'10vw',
 	};
 	actionButton.image = {
-		background:'url(../img/phone.svg) center / 62% no-repeat #d17547' //red accent
+		background:'url(../img/phone-only.svg) center / 75% no-repeat #0c3e85' //red accent
 	};
 	actionButton.init = { // Used in FULLPAGE section TODO: MAKE CSS object section
 		right:'5vw',
@@ -82,14 +82,6 @@ $( document ).ready(function() {
 	
 /********** FULLPAGE FUNCTIONS *********/	
 	
-	$('.page-up').click(function(e){
-		e.preventDefault();
-		$.fn.fullpage.moveSectionUp();
-	})
-	$('.page-down').click(function(e){
-		e.preventDefault();
-		$.fn.fullpage.moveSectionDown();
-	})
 
 
 /********** FULLPAGE OPERATION *********/	
@@ -100,9 +92,9 @@ $( document ).ready(function() {
 
 	$('#fullpage').fullpage({
 		scrollingSpeed: 1000,
-		easingcss3: 'cubic-bezier(0.55 ,0.0 ,0.1 ,1.0)',
 		autoScrolling: true,
-		fixedElements: '.action-button_floating',
+		
+		fixedElements: '.action-button_floating, .page-up, .page-down',
 		
 		'onLeave': function(index, nextIndex, direction) {
 			var carouselTl = new TimelineLite(),
@@ -164,6 +156,9 @@ $( document ).ready(function() {
 			} else if (direction == 'up') {
 				thisPage = index - 2;
 			}
+		}, 'afterLoad': function() {
+			TweenMax.to('.page-up', 0.0, {zIndex:'11'});
+			TweenMax.to('.page-down', 0.0, {zIndex:'11'});
 		}
 	});
 
@@ -187,5 +182,16 @@ $( document ).ready(function() {
 					clickCounter = 0;
 				}
 			});
+
+			$('.page-up').click(function( e ){
+				$.fn.fullpage.moveSectionUp();
+				e.preventDefault();	
+				TweenMax.to('.page-up', 0.0, {zIndex:'-9'});
+			})
+			$('.page-down').click(function(e){
+				TweenMax.to('.page-down', 0.0, {zIndex:'-9'});
+				$.fn.fullpage.moveSectionDown();
+				e.preventDefault();
+			})
 
 });

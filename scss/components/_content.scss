@@ -18,11 +18,12 @@
 
 	border-radius: $b-radius;
 	background-color: white;
-	color: $text-dark-color;
+	color: darken($brand-color, 5%);
 	> p {
 		max-width: 800px;
 		text-align: justify;
 	}
+	overflow-y: hidden;
 }
 
 #section1,
@@ -35,31 +36,14 @@
 body {
 	background:
 		linear-gradient(rgba($brand-color, 0.1), rgba($brand-color, 0.1)),
-		url(../img/background.png) 50%/cover no-repeat;
+		url(../img/park.svg) 100%/cover  no-repeat;
 }
 
 .icon {
 	display: inline-block;
-	max-width: 7em;
-	max-height: 7em;
-}
-.icon path {
-	fill: $brand-color;
-}
-.icon {
-	padding: 0.5em;
-	border-radius: 15%;
-	border: 0.3em solid $brand-color;
-	background-color: $background-light-color;
+	width: 100%;
+	max-height: 30%;
+	width: 20em;
 }
 
-.icon:hover path {
-	fill: $background-light-color;
-}
-.icon:hover {
-	background-color: $brand-color;
-	border-color: $background-light-color;
-}
 
-@media (min-width: 750px) {
-}

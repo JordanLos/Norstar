@@ -21,7 +21,9 @@
 /* Properties set for Javascript animations */
 	height: 0vw;
 	width: 0vw;
-	background-color: $accent-color;
+	background-color: $accent-light-color;
+	max-width: 120px;
+	max-height: 120px;
 	
 }
 

@@ -7,6 +7,7 @@
 .media {
 	display: flex;
 	width: 100%;
+	max-width: 1080px;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
@@ -18,15 +19,13 @@
 	margin-right: 2em;
 }
 
-@media(min-width: 450px) {
+@media(min-width: 450px) and (min-height: 750px) {
 	.media-img {
-		height: 5em;
+		height: 6em;
 		width: 6em;
-		margin-right: 2em;
-		margin-bottom: 1em;
 	}
 	.media {
-		flex-direction: column;
+		justify-content: center;
 	}
 }
 
