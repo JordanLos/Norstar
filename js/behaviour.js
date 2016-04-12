@@ -16,9 +16,10 @@ $( document ).ready(function() {
 
 /******* ONLOAD FUNCTIONS *******/
 	window.onload = function() {
-		TweenMax.to('.page-down', 0.5, {
+		TweenMax.to('.page-down', 0.35, {
 			delay: 0.6,
-			bottom:'0%'
+			bottom:'0%', 
+			ease: Circ.easeOut
 		});
 	};
 
@@ -29,25 +30,28 @@ $( document ).ready(function() {
 		actionButton = new Object();
 
 	header.transitioning = {
-		delay: 0.2,
 		transform:"translateY(0%)",
-		top:'9%' // 8% .page-up button + 1% margin
+		top:'9%', // 8% .page-up button + 1% margin
+		ease: Power2.easeInOut
 	};	
 	header.positioned = { //TODO: BAD NAME! doesn't describe how its fuctioning
 		width:'82.94039%', // Copied from bourbon grid width of 10/12
 		marginLeft:'8.5298%',
+		ease: Power2.easeInOut
 	};
 
 	section1.positioned = {
 		height:'50%',
 		padding:'2em',
-		width:'82.94039%' // Copied from bourbon grid width of 10/12
+		width:'82.94039%', // Copied from bourbon grid width of 10/12
+		ease: Sine.easeInOut
 	};
 
 	actionButton.positioned = {
 		padding:'2rem',
 		height:'10vw',
 		width:'10vw',
+		ease: Power2.easeInOut
 	};
 	actionButton.image = {
 		background:'url(../img/phone-only.svg) center / 75% no-repeat #0c3e85' //red accent
@@ -56,13 +60,15 @@ $( document ).ready(function() {
 		right:'5vw',
 		height:'10vw',
 		width:'10vw',
-		boxShadow:'0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23)'
+		boxShadow:'0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23)',
+		ease: Power2.easeInOut
 	};
 	actionButton.center = {
 		right:'44.0vw',
 		height:'12vw',
 		width:'12vw',
-		boxShadow:'0px 14px 28px rgba(0, 0, 0, 0.25), 0px 10px 10px rgba(0, 0, 0, 0.22)'
+		boxShadow:'0px 14px 28px rgba(0, 0, 0, 0.25), 0px 10px 10px rgba(0, 0, 0, 0.22)',
+		ease: Expo.easeInOut
 	};
 
 	function moveToContent(tl) {
@@ -71,8 +77,8 @@ $( document ).ready(function() {
 		.to('#slogan', 0.5, hd, "open -=0.2 " )
 		// 2. Expand the header to take up the entire width of the screen and add the carousel text
 		.to(['#carousel1', '.carousel-header'], 0.5, dsp, "enterContent")
-		.to('.header', 0.5, header.positioned, "enterContent" )
-		.to('#section1', 0.4, { autoAlpha:1, top:'35%' }, "enterContent")
+		.to('.header', 0.5, header.positioned, "" )
+		.to('#section1', 0.4, { autoAlpha:1, top:'35%', ease: Expo.easeInOut }, "enterContent")
 		// 3. Bring the action buttion into view
 		.to('.action-button_floating', 0.3, actionButton.positioned, "enterContent")
 		.to('.action-button_floating', 0.2, actionButton.image)
@@ -113,12 +119,12 @@ $( document ).ready(function() {
 			// Hide content/header combo
 			function hideCombo(tl, header, content){
 				tl.to(header, 0.3, hd, "hd")
-				.to(content, 0.3, {autoAlpha:0, top:'44%'}, "hd")
+				.to(content, 0.3, {autoAlpha:0, top:'44%', ease: Circ.easeOut }, "hd")
 			}
 			// Display content/header Combo
 			function displayCombo(tl, header, content){
 				tl.to(header, 0.3, dsp, "dsp")
-				.to(content, 0.3, {autoAlpha:1, top:'35%'}, "dsp")
+				.to(content, 0.3, {autoAlpha:1, top:'35%', ease: Circ.easeInOut}, "dsp")
 			}
 			// Move Carousel
 			function moveCarousel(tl) {
@@ -168,16 +174,16 @@ $( document ).ready(function() {
 				var tl = new TimelineLite();
 				if (clickCounter == 0) {
 					tl.to(headerActive, 0.3, hd, "hd")
-					.to(contentActive, 0.3, {autoAlpha:0, top:'44%'}, "hd")
-					.to('#section4', 0.3, { autoAlpha:1, top:'35%'}, "dsp")
+					.to(contentActive, 0.3, {autoAlpha:0, top:'44%', ease: Circ.easeInOut}, "hd")
+					.to('#section4', 0.3, { autoAlpha:1, top:'35%', ease: Circ.easeInOut}, "dsp")
 					.to('#carousel4', 0.3, dsp, "dsp" )
 
 					clickCounter = 1;
 				} else if (clickCounter == 1) {
-					tl.to('#section4', 0.3, { autoAlpha:0, top:'44%'}, "hd")
+					tl.to('#section4', 0.3, { autoAlpha:0, top:'44%', ease: Circ.easeInOut}, "hd")
 					.to('#carousel4', 0.3, hd, "hd" )
 					.to(headerActive, 0.3, dsp, "dsp")
-					.to(contentActive, 0.3, {autoAlpha:1, top:'35%'}, "dsp")
+					.to(contentActive, 0.3, {autoAlpha:1, top:'35%', ease: Circ.easeInOut}, "dsp")
 
 					clickCounter = 0;
 				}

@@ -1,4 +1,5 @@
 // TODO: Change name from main to something else, its confusing
+	$whitey: rgba(255,255,255, 0.95);
 
 .content {
 	@include span-columns(10);
@@ -17,7 +18,7 @@
 	top: 44%;
 
 	border-radius: $b-radius;
-	background-color: white;
+	background-color: $whitey;
 	color: darken($brand-color, 5%);
 	> p {
 		max-width: 800px;

@@ -147,7 +147,7 @@ $text-light-color {}
   height: 25%;
   border-radius: 10px;
   padding: 0.5em 1em;
-  background: linear-gradient(#008265, #008265 50%, white 50%, white); }
+  background: linear-gradient(#008265, #008265 50%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0.95)); }
   .header:last-child {
     margin-right: 0; }
 
@@ -199,7 +199,7 @@ $text-light-color {}
   position: fixed;
   top: 44%;
   border-radius: 5px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.95);
   color: #006951;
   overflow-y: hidden; }
   .content:last-child {

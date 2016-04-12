@@ -1,3 +1,4 @@
+	$whitey: transparentize(white, 0.05);
 .header {
 	@include span-columns(8);
 	@include shift(2);
@@ -10,7 +11,7 @@
 	border-radius: 10px;
 	padding: 0.5em 1em;
 	background: 
-		linear-gradient($brand-color, $brand-color 50%, white 50%, white);
+		linear-gradient($brand-color, $brand-color 50%, $whitey 50%, $whitey);
 }
 
 
