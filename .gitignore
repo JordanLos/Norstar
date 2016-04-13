@@ -1,0 +1,8 @@
+# editor files
+*.swp
+
+# OS X Files
+.DS_Store
+
+# Langauge Files
+.sass-cache
