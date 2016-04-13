@@ -5,7 +5,7 @@
 	@include vertical-align;
 	overflow: hidden;
 	position: relative;
-	z-index: 2;
+	z-index: 1;
 	@include elevation-1;
 	height: 25%;
 	border-radius: 10px;
@@ -54,7 +54,7 @@
 .carousel {
 	text-align: center;
 	overflow: hidden;
-	z-index: 2;
+	z-index: 1;
 	color: $brand-color;
 	display: flex;
 	flex-direction: column;

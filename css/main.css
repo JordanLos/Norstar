@@ -79,7 +79,7 @@ a {
   transform: translateY(-50%);
   overflow: hidden;
   position: relative;
-  z-index: 2;
+  z-index: 1;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   height: 25%;
   border-radius: 10px;
@@ -123,7 +123,7 @@ a {
 .carousel {
   text-align: center;
   overflow: hidden;
-  z-index: 2;
+  z-index: 1;
   color: #008265;
   display: flex;
   flex-direction: column;
@@ -158,7 +158,8 @@ a {
   padding: 5%;
   position: fixed;
   top: 44%;
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  z-index: 1; }
   .content:last-child {
     margin-right: 0; }
 
@@ -180,6 +181,8 @@ body {
   visibility: hidden; }
 
 .media {
+  text-decoration: none;
+  color: inherit;
   display: flex;
   flex-direction: row;
   justify-content: center;

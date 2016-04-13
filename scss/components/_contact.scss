@@ -3,6 +3,8 @@
 }
 
 .media {
+	text-decoration: none;
+	color: inherit;
 	@include flex-row-center-center;
 	width: 100%;
 }

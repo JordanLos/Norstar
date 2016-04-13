@@ -165,8 +165,8 @@ $( document ).ready(function() {
 				thisPage = index - 2;
 			}
 		}, 'afterLoad': function() {
-			TweenMax.to('.page-up', 0.0, {zIndex:'11'});
-			TweenMax.to('.page-down', 0.0, {zIndex:'11'});
+			TweenMax.to('.page-up', 0.0, {zIndex:'2'});
+			TweenMax.to('.page-down', 0.0, {zIndex:'2'});
 		}
 	});
 
@@ -180,7 +180,7 @@ $( document ).ready(function() {
 					.to(contentActive, 0.3, {autoAlpha:0, top:'44%', ease: Circ.easeInOut}, "hd")
 					.to('#section4', 0.3, { autoAlpha:1, top:'35%', ease: Circ.easeInOut}, "dsp")
 					.to('#carousel4', 0.3, dsp, "dsp" )
-					.to('.action-button_floating', 0.0, {zIndex:'11'});
+					.to('.action-button_floating', 0.0, {zIndex:'3'});
 					clickCounter = 1;
 					} else if (clickCounter == 1) {
 					tl.to('.action-button_floating', 0.0, {zIndex:'-11'})
@@ -188,11 +188,10 @@ $( document ).ready(function() {
 					.to('#carousel4', 0.3, hd, "hd" )
 					.to(headerActive, 0.3, dsp, "dsp")
 					.to(contentActive, 0.3, {autoAlpha:1, top:'35%', ease: Circ.easeInOut}, "dsp")
-					.to('.action-button_floating', 0.0, {zIndex:'11'});
+					.to('.action-button_floating', 0.0, {zIndex:'3'});
 
 					clickCounter = 0;
 				}
-				TweenMax.to('.action-button_floating', 0.0, {zIndex:'-11'});
 			});
 
 			$('.page-up').click(function( e ){
