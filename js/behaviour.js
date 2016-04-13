@@ -148,6 +148,7 @@ $( document ).ready(function() {
                 TweenMax.to('.page-down', 0.15, { bottom:'0%' })
 				TweenMax.to('.action-button_floating', 0.4, { bottom:'5%' })
 				TweenMax.to('.footer', 0.4, { bottom:'-10%' })
+
 			} else if (index == (lastPage - 1) && direction == 'down') { 
                 TweenMax.to('.page-down', 0.15, { bottom:'-8%' })
 				TweenMax.to('.action-button_floating', 0.4, { bottom:'-8%' })

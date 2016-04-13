@@ -1,11 +1,10 @@
-	$whitey: transparentize(white, 0.05);
 .header {
 	@include span-columns(8);
 	@include shift(2);
 	@include vertical-align;
 	overflow: hidden;
 	position: relative;
-	z-index: 1;
+	z-index: 0;
 	@include elevation-1;
 	height: 25%;
 	border-radius: 10px;
@@ -13,7 +12,6 @@
 	background: 
 		linear-gradient($brand-color, $brand-color 50%, $whitey 50%, $whitey);
 }
-
 
 .page-down, .page-up {
 	position: absolute;
@@ -23,18 +21,19 @@
 	display: flex;
 	justify-content: center;
 }
+
 .page-down {
 	bottom: -8%;
 }
+
 .page-up {
 	top: -8%;
 }
+
 .down-button.svg {
 	height: 95%;
 	width: 95%;
 }
-
-
 
 #brand {
 	height: 50%;
