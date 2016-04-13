@@ -1,0 +1,26 @@
+.action-button_floating {
+	@include elevation-2;
+	position: absolute;
+	z-index: 3;
+	border-radius: 50%;
+	bottom: 5%;
+	right: 5vw;
+
+// Javascript Target Properties 
+//	height: 9rem;
+//	width: 9rem;
+//	padding: 2rem;
+//	background:
+//		url(../img/phone.svg)
+//		center / 62%
+//		no-repeat
+//		#178166;
+
+// Properties set for Javascript animations
+	height: 0vw; //vw needed to tween
+	width: 0vw; //vw needed to tween
+	background-color: $accent-light-color;
+	max-width: 120px;
+	max-height: 120px;
+}
+
