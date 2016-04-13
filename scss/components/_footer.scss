@@ -1,0 +1,12 @@
+.footer {
+	position: fixed;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	bottom: -10%;
+	padding: 1em;
+
+	color: white;
+	background-color: transparentize($compliment-color, .50);
+
+}

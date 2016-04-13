@@ -131,6 +131,16 @@ $text-light-color {}
   height: 100vh;
   width: 100%; }
 
+.footer {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  bottom: -10%;
+  padding: 1em;
+  color: white;
+  background-color: rgba(12, 62, 133, 0.5); }
+
 .header {
   float: left;
   display: block;
@@ -192,21 +202,18 @@ $text-light-color {}
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.24);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #006951;
   height: 56%;
   padding: 5%;
   position: fixed;
   top: 44%;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.95);
-  color: #006951;
   overflow-y: hidden; }
   .content:last-child {
     margin-right: 0; }
-  .content > p {
-    max-width: 800px;
-    text-align: justify; }
 
 #section1,
 #section2,
@@ -215,39 +222,33 @@ $text-light-color {}
   visibility: hidden; }
 
 body {
-  background: linear-gradient(rgba(0, 130, 101, 0.1), rgba(0, 130, 101, 0.1)), url(../img/park.svg) 100%/cover no-repeat; }
+  background: url("../img/park.svg") 100%/cover no-repeat; }
 
 .icon {
   display: inline-block;
   width: 100%;
-  max-height: 30%;
-  width: 20em; }
+  max-height: 30%; }
 
 .contact {
-  visibility: hidden;
-  z-index: 2; }
+  visibility: hidden; }
 
 .media {
+  align-items: center;
   display: flex;
-  width: 100%;
-  max-width: 1080px;
   flex-direction: row;
   justify-content: center;
-  align-items: center; }
+  width: 100%; }
 
 .media-img {
   display: inline-block;
   height: 3em;
-  width: 5em;
-  margin-right: 2em; }
+  margin-right: 2em;
+  width: 5em; }
 
 @media (min-width: 450px) and (min-height: 750px) {
   .media-img {
     height: 6em;
-    width: 6em; }
-
-  .media {
-    justify-content: center; } }
+    width: 6em; } }
 .action-button_floating {
   position: absolute;
   z-index: 3;

@@ -147,9 +147,11 @@ $( document ).ready(function() {
 			if (index == lastPage && direction == 'up') {
                 TweenMax.to('.page-down', 0.15, { bottom:'0%' })
 				TweenMax.to('.action-button_floating', 0.4, { bottom:'5%' })
+				TweenMax.to('.footer', 0.4, { bottom:'-10%' })
 			} else if (index == (lastPage - 1) && direction == 'down') { 
                 TweenMax.to('.page-down', 0.15, { bottom:'-8%' })
 				TweenMax.to('.action-button_floating', 0.4, { bottom:'-8%' })
+				TweenMax.to('.footer', 0.4, { bottom:'0%' })
 			};	
 			if (clickCounter == 1) {
 					TweenMax.to('#section4', 0.3, {autoAlpha:0, top:'44%'})

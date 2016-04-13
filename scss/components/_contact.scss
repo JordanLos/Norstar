@@ -1,31 +1,26 @@
 .contact {
-	visibility: hidden;
-	z-index:2;
-
+	visibility: hidden; // to be changed by JS
 }
 
 .media {
+	align-items: center;
 	display: flex;
-	width: 100%;
-	max-width: 1080px;
 	flex-direction: row;
 	justify-content: center;
-	align-items: center;
+	width: 100%;
 }
+
 .media-img {
 	display: inline-block;
 	height: 3em;
-	width: 5em;
 	margin-right: 2em;
+	width: 5em;
 }
 
 @media(min-width: 450px) and (min-height: 750px) {
 	.media-img {
 		height: 6em;
 		width: 6em;
-	}
-	.media {
-		justify-content: center;
 	}
 }
 
