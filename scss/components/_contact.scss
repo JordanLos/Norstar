@@ -11,15 +11,15 @@
 
 .media-img {
 	display: inline-block;
-	height: 3em;
+	height: 2.5em;
+	width: 2.5em;
 	margin-right: 2em;
-	width: 5em;
 }
 
-@media(min-width: 450px) and (min-height: 750px) {
+@media(min-width: 450px) and (min-height: 850px) {
 	.media-img {
-		height: 6em;
-		width: 6em;
+		height: 4em;
+		width: 4em;
 	}
 }
 
