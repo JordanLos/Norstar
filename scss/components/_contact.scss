@@ -3,10 +3,7 @@
 }
 
 .media {
-	align-items: center;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
+	@include flex-row-center-center;
 	width: 100%;
 }
 

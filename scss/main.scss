@@ -6,7 +6,6 @@
 @import 'global/elements';
 @import 'global/mixins';
 @import 'global/typography';
-@import 'global/util';
 @import 'global/vars';
 
 // Components: Largest Elements of a page structure (i.e. header, nav, footer,)
@@ -15,16 +14,8 @@
 @import 'components/header';
 @import 'components/content';
 @import 'components/contact';
+@import 'components/action-button';
 
-// Modules: Objects belonging to components
-@import 'modules/blurb';
-@import 'modules/logo';
-@import 'modules/media';
-@import 'modules/action-button';
-@import 'modules/carousel';
 
 // Last in Cascade - overwrites
 // @import 'overwrites'; //not used this project
-
-
-
