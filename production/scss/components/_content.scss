@@ -1,0 +1,35 @@
+.content {
+	@include span-columns(10);
+	@include shift(1);
+	@include elevation-1;
+	@include flex-col-centered;
+
+	border-radius: $b-radius;
+	background-color: $whitey;
+	color: darken($brand-color, 5%);
+	height: 56%;
+	padding: 5%;
+	position: fixed;
+	top: 44%;
+	// top: 34%; the height of header + .page* + 1% margin and will be set by JS
+	overflow-y: hidden;
+}
+
+#section1,
+#section2,
+#section3,
+#section4 {
+	visibility: hidden;
+}
+
+body {
+	background: url('../img/park.svg') 100% / cover  no-repeat;
+}
+
+.icon {
+	display: inline-block;
+	width: 100%;
+	max-height: 30%;
+}
+
+

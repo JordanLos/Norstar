@@ -1,0 +1,15 @@
+// Use Border Box Sizing
+html {
+	box-sizing: border-box;
+}
+
+body {
+	overflow: hidden;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inhereit;
+}
+
