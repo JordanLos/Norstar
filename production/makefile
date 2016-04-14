@@ -3,6 +3,7 @@ SHELL := /bin/bash
 all:
 	make watch-sass render-jade start-browser-sync -j
 production:
+	make min-cat-css min-cat-js img-min
 
 watch-sass:
 	sass --watch scss/main.scss:css/main.css
@@ -11,11 +12,14 @@ render-jade:
 start-browser-sync:
 	browser-sync start --server --files "js/behaviour.js, css/main.css, index.html"
 
-cat-js:
+min-cat-js:
 	rm -rf js/main.js
-	@bash -c 'cat js/libraries/jquery-2.1.4.js js/node_modules/fullpage.js/jquery.fullPage.js js/libraries/{TweenMax.js,CSSPlugin.min.js,TimelineLite.min.js} js/behaviomr.js > js/main.js'
+	@bash -c 'cat js/libraries/jquery-2.1.4.js js/node_modules/fullpage.js/jquery.fullPage.js js/libraries/{TweenMax.js,CSSPlugin.min.js,TimelineLite.min.js} js/behaviour.js > js/main.js'
 	minify js/main.js
 
-cat-css:
+min-cat-css:
 	@bash -c 'cat css/jquery.fullPage.css css/main.css > css/cat.css'
 	minify css/cat.css
+
+img-min:
+	svgo -f img

@@ -535,17 +535,21 @@ body {
   width: 100%;
   max-height: 30%; }
 
-#section4 {
-  z-index: 1; }
-
 .media {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-left: 8.5298%;
   text-decoration: none;
   color: inherit;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%; }
+  justify-content: flex-start; }
+  .media:last-child {
+    margin-right: 0; }
 
 .media-img {
   display: inline-block;

@@ -1,13 +1,10 @@
-#section4 {
-	z-index: 1;
-}
-
-
 .media {
+	@include span-columns(10);
+	@include shift(1);
 	text-decoration: none;
 	color: inherit;
 	@include flex-row-center-center;
-	width: 100%;
+	justify-content: flex-start;
 }
 
 .media-img {
