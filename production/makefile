@@ -11,8 +11,11 @@ render-jade:
 start-browser-sync:
 	browser-sync start --server --files "js/behaviour.js, css/main.css, index.html"
 
-cat-files:
+cat-js:
 	rm -rf js/main.js
 	@bash -c 'cat js/libraries/jquery-2.1.4.js js/node_modules/fullpage.js/jquery.fullPage.js js/libraries/{TweenMax.js,CSSPlugin.min.js,TimelineLite.min.js} js/behaviomr.js > js/main.js'
 	minify js/main.js
 
+cat-css:
+	@bash -c 'cat css/jquery.fullPage.css css/main.css > css/cat.css'
+	minify css/cat.css
