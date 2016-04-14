@@ -1,0 +1,41 @@
+.header {
+	@include span-columns(12);
+	top: 0;
+	left: 0;
+	position: fixed;
+	z-index: 2;
+	@include elevation-1;
+	height: 25%;
+}
+
+.page-down, .page-up {
+	display: none;
+}
+
+
+#brand {
+	@include flex-col-centered;
+	height: 60%;
+	background-color: $brand-color;
+}
+#logo {
+	padding: 1em 0; 
+	display: inline-block;
+	width: 90%;
+}
+
+.carousel {
+	text-align: center;
+	color: $brand-color;
+	height: 40%;
+	padding-top: 2%;
+	background-color: $whitey;
+}
+
+.carousel-header,
+#carousel1,
+#carousel2,
+#carousel3,
+#carousel4 {
+	display: none;
+}

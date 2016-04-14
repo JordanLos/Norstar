@@ -1,0 +1,23 @@
+#section4 {
+	margin-bottom: 10vh;
+}
+.media {
+	text-decoration: none;
+	color: inherit;
+	margin: 1em auto 0;
+	text-align: center;
+}
+
+.media-img {
+	display: inline-block;
+	height: 2.5em;
+	width: 2.5em;
+}
+
+@media(min-width: 450px) and (min-height: 1080px) {
+	.media-img {
+		height: 4em;
+		width: 4em;
+	}
+}
+

@@ -6,11 +6,11 @@ production:
 	make min-cat-css min-cat-js img-min
 
 watch-sass:
-	sass --watch scss/main.scss:css/main.css
+	sass --watch scss/main.scss:css/main.css scss/noJS.scss:css/noJS.css
 render-jade:
 	jade -o ./ --watch jade/index.jade
 start-browser-sync:
-	browser-sync start --server --files "js/behaviour.js, css/main.css, index.html"
+	browser-sync start --server --files "js/*.js, css/*.css, index.html"
 
 min-cat-js:
 	rm -rf js/main.js

@@ -1,0 +1,33 @@
+#content {
+	margin-top: 30vh;
+}
+.content {
+	@include span-columns(10);
+	@include shift(1);
+	@include elevation-1;
+	@include flex-col-centered;
+
+	border-radius: $b-radius;
+	background-color: $whitey;
+	color: darken($brand-color, 5%);
+
+	padding: 10%;
+	margin-top: 2em;
+	text-align: justify;
+}
+
+body {
+	background: url('../img/park.svg') 100% / cover  no-repeat;
+}
+
+.icon {
+	display: inline-block;
+	height: 20vh;
+	margin: 5%;
+}
+
+h1.noJs {
+	font-size: 2.4rem;
+	text-align: center;
+}
+

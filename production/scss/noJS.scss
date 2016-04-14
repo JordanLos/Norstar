@@ -1,0 +1,22 @@
+// Libraries
+@import 'bourbon/bourbon';
+@import 'bourbon/neat/neat';
+
+// Global: Core styles used in potentially all documents
+@import 'global/elements';
+@import 'global/mixins';
+@import 'global/typography';
+@import 'global/vars';
+
+// Components: Largest Elements of a page structure (i.e. header, nav, footer,)
+@import 'noJScomponents/overlay';
+@import 'noJScomponents/footer';
+@import 'noJScomponents/header';
+@import 'noJScomponents/content';
+@import 'noJScomponents/contact';
+@import 'noJScomponents/action-button';
+
+
+// Last in Cascade - overwrites
+// @import 'overwrites'; //not used this project
+
