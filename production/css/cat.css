@@ -353,7 +353,17 @@ html.fp-enabled,
         page-break-after: always !important;
     }
 
-}html {
+}.noJs {
+  display: none; }
+
+h1, p, a, .icon {
+  visibility: inherit !important; }
+
+#logo,
+#slogan h1 {
+  visibility: visible !important; }
+
+html {
   box-sizing: border-box; }
 
 *, *::after, *::before {
@@ -361,9 +371,6 @@ html.fp-enabled,
 
 html {
   box-sizing: border-box; }
-
-body {
-  overflow: hidden; }
 
 *,
 *::after,
@@ -517,7 +524,8 @@ a {
   padding: 5%;
   position: fixed;
   top: 44%;
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  text-align: justify; }
   .content:last-child {
     margin-right: 0; }
 
@@ -540,7 +548,6 @@ body {
   display: block;
   margin-right: 2.35765%;
   width: 82.94039%;
-  margin-left: 8.5298%;
   text-decoration: none;
   color: inherit;
   display: flex;
@@ -555,7 +562,8 @@ body {
   display: inline-block;
   height: 2.5em;
   width: 2.5em;
-  margin-right: 2em; }
+  margin-right: 2em;
+  margin-left: -1em; }
 
 @media (min-width: 450px) and (min-height: 1080px) {
   .media-img {

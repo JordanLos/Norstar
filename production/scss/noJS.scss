@@ -1,3 +1,8 @@
+// Hackiness (sorry)
+h1, p, a, #logo, .icon {
+	// see README or main.scss comments
+	visibility: inherit !important;
+}
 // Libraries
 @import 'bourbon/bourbon';
 @import 'bourbon/neat/neat';

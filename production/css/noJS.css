@@ -1,3 +1,6 @@
+h1, p, a, #logo, .icon {
+  visibility: inherit !important; }
+
 html {
   box-sizing: border-box; }
 

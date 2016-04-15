@@ -1,3 +1,22 @@
+// Hackiness (sorry)
+.noJs { 
+	// class for items that will dissapear when JS is ON
+	display: none;
+}
+h1, p, a, .icon {
+	// reverts 'visibility: none' in <head>.
+	// 'visibility:none' added to <head> to avoid FLOUT from loading CSS through JS.
+	// Loading CSS through JS to allow for JS enabled and JS disabled versions 
+	// of the site.
+	// See the READ.ME for why.
+	visibility: inherit !important;
+}
+#logo, 
+#slogan h1 {
+	// reverts 'visibility: none' for above the fold content when JS is enabled
+	visibility: visible !important;
+}
+
 // Libraries
 @import 'bourbon/bourbon';
 @import 'bourbon/neat/neat';

@@ -2,11 +2,32 @@ doctype html
 html(lang="en")
 	head
 		title Norstar: Recycle Contaminated Soils
-		link(rel='stylesheet' href='css/noJS.css')
-		//link(rel="stylesheet" type="text/css" href="css/jquery.fullPage.css")
-		//script(src="https://use.typekit.net/sjx5bzx.js")
-		//script try{Typekit.load({ async: true });}catch(e){}
-		//script(src='js/main.min.js')
+		style.
+			h1, p, a, #logo, .icon {
+				visibility: hidden;
+			}
+			body {
+				background: url('../img/park.svg') 100% / cover  no-repeat;
+			}
+		noscript
+			// Styles the Sheet without JS
+			link(rel='stylesheet' href='css/noJS.css')
+		script.
+			// Script to load CSS - allows one style sheet for when JS off and 
+			// when JS is on
+			var cb = function() {
+			var l = document.createElement('link'); l.rel = 'stylesheet';
+			l.href = 'css/cat.min.css';
+			var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+			};
+			var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+			webkitRequestAnimationFrame || msRequestAnimationFrame;
+			if (raf) raf(cb);
+			else window.addEventListener('load', cb);
+
+		script(src="https://use.typekit.net/sjx5bzx.js")
+		script try{Typekit.load({ async: true });}catch(e){}
+		script(src='js/main.min.js')
 		meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
 		meta(name='description' content='Norstar recycles contaminated soil.  Remediate contaminated clay and dispose of impacted soil while protecting the environment and avoiding costly landfills.')
 	body
