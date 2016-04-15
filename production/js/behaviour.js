@@ -138,9 +138,17 @@ $( document ).ready(function() {
 			} else if (index == 2 && direction == 'up') { 
 				openingScene.reverse();
 			} else {
-				moveCarousel(carouselTl)
+				moveCarousel(carouselTl);
 			};
-				
+			
+			// Highlight up/down arrows
+			if (direction == 'down') {
+				TweenMax.to('.page-down', 0.4, {backgroundColor:'rgba(12,62,133,0.5)'});
+				TweenMax.to('.page-down', 0.4, {backgroundColor:'rgba(12,62,133,0.0)', delay:0.2});
+			} else if (direction =='up') {
+				TweenMax.to('.page-up', 0.4, {backgroundColor:'rgba(12,62,133,0.7)'});
+				TweenMax.to('.page-up', 0.4, {backgroundColor:'rgba(12,62,133,0.0)', delay:0.2});
+			}
 			// Last Page:
 			// 1. Hide page-down icon to indicate end of document
 			// 2. Move action-button as a call to action on last page

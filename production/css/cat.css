@@ -462,10 +462,12 @@ a {
   justify-content: center; }
 
 .page-down {
-  bottom: -8%; }
+  bottom: -8%;
+  background-color: rgba(202, 77, 0, 0); }
 
 .page-up {
-  top: -8%; }
+  top: -8%;
+  background-color: rgba(12, 62, 133, 0); }
 
 .down-button.svg {
   height: 95%;
@@ -534,9 +536,6 @@ a {
 #section3,
 #section4 {
   visibility: hidden; }
-
-body {
-  background: url("../img/park.svg") 100%/cover no-repeat; }
 
 .icon {
   display: inline-block;

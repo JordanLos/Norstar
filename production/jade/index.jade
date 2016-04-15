@@ -2,6 +2,7 @@ doctype html
 html(lang="en")
 	head
 		title Norstar: Recycle Contaminated Soils
+		// Style. will prevent flout - styles reset in actual stylesheets
 		style.
 			h1, p, a, #logo, .icon {
 				visibility: hidden;
@@ -10,11 +11,10 @@ html(lang="en")
 				background: url('../img/park.svg') 100% / cover  no-repeat;
 			}
 		noscript
-			// Styles the Sheet without JS
+			// Load Stylesheet for when JS is disabled
 			link(rel='stylesheet' href='css/noJS.css')
 		script.
-			// Script to load CSS - allows one style sheet for when JS off and 
-			// when JS is on
+			// Load Style sheet when JS is enabled
 			var cb = function() {
 			var l = document.createElement('link'); l.rel = 'stylesheet';
 			l.href = 'css/cat.min.css';
