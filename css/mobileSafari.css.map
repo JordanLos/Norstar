@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,OAAQ;EACP,UAAU,EAAE,GAAG;;AAEhB,QAAS;EACR,SAAS,EAAE,cAAc",
+"sources": ["../scss/mobileSafari.scss"],
+"names": [],
+"file": "mobileSafari.css"
+}

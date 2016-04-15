@@ -1,0 +1,88 @@
+doctype html
+html(lang="en")
+	head
+		title Norstar: Recycle Contaminated Soils
+		// Style. will prevent flout - styles reset in actual stylesheets
+		style.
+			h1, p, a, #logo, .icon {
+				visibility: hidden;
+			}
+			body {
+				background: url('img/park.svg') 100% / cover  no-repeat;
+			}
+		noscript
+			// Load Stylesheet for when JS is disabled
+			link(rel='stylesheet' href='css/noJS.min.css')
+		script.
+			// Load Style sheet when JS is enabled
+			var cb = function() {
+			var l = document.createElement('link'); l.rel = 'stylesheet';
+			l.href = 'css/cat.min.css';
+			var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+			};
+			var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+			webkitRequestAnimationFrame || msRequestAnimationFrame;
+			if (raf) raf(cb);
+			else window.addEventListener('load', cb);
+		script(src="https://use.typekit.net/sjx5bzx.js")
+		script try{Typekit.load({ async: true });}catch(e){}
+		script(src='js/main.min.js')
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(name='description' content='Norstar recycles contaminated soil.  Remediate contaminated clay and dispose of impacted soil while protecting the environment and avoiding costly landfills.')
+	body
+		.overlay
+			.header
+				#brand
+					img#logo(src='img/norstar-white.svg' alt='norstar-logo')
+				.carousel
+					.carousel-fixed
+						#slogan 
+							h1 What Recycling 
+							h1 Should Look Like
+						h1.carousel-header Recycling Should
+					.carousel-moving
+						h1#carousel1 Skip the Landfill
+						h1#carousel2 Cost Less
+						h1#carousel3 Be About the Future
+						h1#carousel4 Be Your Best Option
+			a.page-up
+				img.down-button(src='img/arrow-up.svg' alt='page up button')
+			.action-button_floating
+			a.page-down
+				img.down-button(src='img/arrow-down.svg' alt='page down button')
+			.footer
+				a(href="http://www.jordanlos.com"): p.footer-p Design By Jordan
+				a(href="http://www.freepik.com"): p.footer-p Icons by Freepik
+		#content
+			.content#section1
+				h1.noJs Skip the Landfill
+				img.icon(src='img/recycle.svg' alt='recycling truck')
+				p By recycling impacted soils, we can avoid costly intermediate solutions like landfills. Our commitment to resourcefulness means we find new environmentally friendly uses for contaminated soils instead of just moving the liability elsewhere.
+			.content#section2
+				h1.noJs Save Resources, Including Money
+				img.icon(src='img/money.svg' alt='piggy bank')
+				p Businesses shouldn't have to choose between doing the right thing for the environment and saving money. We are committed to offering significant savings on remediation costs. When we can accomplish the same goals with less resources both businesses and the environment benefit .
+			.content#section3
+				h1.noJs Recycling is about the Future
+				img.icon(src='img/kids.svg' alt='kids playing')
+				p Why pass the liability to the next generation? Our commitment to sustainability means we don't just move contaminants, we elimiate them. We think our children shouldn't have to deal with our contaminants, just in a different location.
+			.content#section4
+				h1.noJs Your Best Option
+				img.icon(src='img/call.svg' alt='girl with headset')
+				p Want to learn more about Norstar Environmental or curious about recycling other materials?
+				a(href='tel:7804146088').media
+					img.media-img(src='img/phone.svg' alt='phone') 
+					p.media-p  780 414 6088
+				a(href='https://www.google.ca/maps/place/Norstar+Industries+Ltd/@53.548979,-113.6340597,17z/data=!4m7!1m4!3m3!1s0x53a020de00cb95cb:0xf0189d9466fc64ab!2s17930+105+Ave+NW,+Edmonton,+AB+T5S+2H5!3b1!3m1!1s0x53a020dd9cfa67d5:0x746844c09ccd43d2').media
+					img.media-img(src='img/pin.svg' alt='map pin') 
+					p.media-p  #202-17930 105 Ave NW Edmonton, AB
+				a(href='mailto:meaghan@norstarinds.com').media
+					img.media-img(src='img/mail.svg' alt='mail') 
+					p.media-p  meaghan@norstarinds.com
+
+		#fullpage
+			.section
+			.section
+			.section
+			.section
+			.section
